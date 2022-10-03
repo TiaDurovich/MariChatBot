@@ -1,10 +1,11 @@
 import './App.css';
+import { Chatbot } from 'react-chatbot-kit'
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        Hello World
+        <Chatbot />
       </header>
     </div>
   );
