@@ -4,7 +4,7 @@ import React from 'react';
 
 const ActionProvider = ({ createChatBotMessage, setState, children }) => {
   const handleHello = () => {
-    const botMessage = createChatBotMessage('Hello. Nice to meet you');
+    const botMessage = createChatBotMessage('Hello! I am here to help with your NCEA. What year level are you in?');
 
     setState( (prev) => ({
       ...prev,
