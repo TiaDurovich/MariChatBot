@@ -1,9 +1,11 @@
 // MessageParser starter code
 import React from 'react';
 
+var introductions = ['Hello', 'hello', 'Hi', 'hi', 'Hey', 'hey']
+
 const MessageParser = ({ children, actions }) => {
   const parse = (message) => {
-    if (message.includes('hello')) {
+    if (message = (introductions)) {
       actions.handleHello();
     }
   };
