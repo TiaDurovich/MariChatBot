@@ -1,11 +1,9 @@
 // MessageParser starter code
 import React from 'react';
 
-var introductions = ['Hello', 'hello', 'Hi', 'hi', 'Hey', 'hey']
-
 const MessageParser = ({ children, actions }) => {
   const parse = (message) => {
-    if (message = (introductions)) {
+    if (message.includes('hello')) {
       actions.handleHello();
     }
   };
@@ -15,7 +13,7 @@ const MessageParser = ({ children, actions }) => {
       {React.Children.map(children, (child) => {
         return React.cloneElement(child, {
           parse: parse,
-          actions,
+          actions: {},
         });
       })}
     </div>
