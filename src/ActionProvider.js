@@ -3,8 +3,8 @@
 import React from 'react';
 
 const ActionProvider = ({ createChatBotMessage, setState, children }) => {
-  const handleHello = () => {
-    const botMessage = createChatBotMessage('Hello! I am here to help with your NCEA. What year level are you in?');
+  const handleYear11 = () => {
+    const botMessage = createChatBotMessage('You are currently studying toward NCEA Level 1 and your Dean is...');
 
     setState( (prev) => ({
       ...prev,
@@ -18,7 +18,7 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
       {React.Children.map(children, (child) => {
         return React.cloneElement(child, {
           actions: {
-            handleHello,
+            handleYear11,
           },
         });
       })}

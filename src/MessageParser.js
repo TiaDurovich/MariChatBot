@@ -3,8 +3,12 @@ import React from 'react';
 
 const MessageParser = ({ children, actions }) => {
   const parse = (message) => {
-    if (message.includes('hello') || message.includes('welcome')) {
-      actions.handleHello();
+    if (message.includes('Year 11') 
+    || message.includes('year 11')
+    || message.includes('11')
+    || message.includes('eleven')
+    || message.includes('Eleven')) {
+      actions.handleYear11();
     }
   };
 
