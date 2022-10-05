@@ -11,6 +11,15 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
       messages: [...prev.messages, botMessage],
     }));
   };
+  const handleYear12 = () => {
+    const botMessage = createChatBotMessage('You are currently studying toward NCEA Level 2 and your Dean is...');
+
+    setState( (prev) => ({
+      ...prev,
+      messages: [...prev.messages, botMessage],
+    }));
+  };
+
   const handleIncorrectResponse = () => {
     const botMessage = createChatBotMessage('Please try typing a different response');
 
@@ -27,6 +36,7 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
         return React.cloneElement(child, {
           actions: {
             handleYear11,
+            handleYear12,
             handleIncorrectResponse,
           },
         });
