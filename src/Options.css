@@ -1,0 +1,18 @@
+button:hover {
+    background-color: #a49972c3;
+  }
+
+button {
+    margin: 0.35vw;
+    border-radius: 2.5vw; 
+    height: 2.5vw; 
+    width: 8vw;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
+
+    background: #FFFFFF;
+    font-family: -apple-system, BlinkMacSystemFont;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+
+}
