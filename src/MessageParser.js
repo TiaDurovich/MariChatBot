@@ -10,6 +10,8 @@ const MessageParser = ({ children, actions }) => {
     || message.includes('Eleven')) {
       actions.handleYear11();
     }
+    else
+      actions.handleIncorrectResponse();
   };
 
   return (

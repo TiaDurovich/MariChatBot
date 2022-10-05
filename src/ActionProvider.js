@@ -11,7 +11,15 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
       messages: [...prev.messages, botMessage],
     }));
   };
-  
+  const handleIncorrectResponse = () => {
+    const botMessage = createChatBotMessage('Please try typing a different response');
+
+    setState( (prev) => ({
+      ...prev,
+      messages: [...prev.messages, botMessage],
+    }));
+  };
+
   
   return (
     <div>
@@ -19,6 +27,7 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
         return React.cloneElement(child, {
           actions: {
             handleYear11,
+            handleIncorrectResponse,
           },
         });
       })}
