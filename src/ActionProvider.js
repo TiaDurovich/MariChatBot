@@ -1,40 +1,16 @@
-// ActionProvider starter code
+
 
 import React from 'react';
 
 const ActionProvider = ({ createChatBotMessage, setState, children }) => {
   //Handling the initial user outcome
-  const handleYear11 = () => {
-    const botMessage11 = createChatBotMessage('You are currently studying toward NCEA Level 1 and your Dean is...');
+  const handleCertificateAchievement = () => {
+    const botMessage = createChatBotMessage('To gain your NCEA certificate at Level 1 you need... at Level 2 you need... at Level 3 you need...');
+    const botMessage2 = createChatBotMessage("Type 'endorsements' to learn about certificate and course endorsements, or refer back to the list above.");
 
     setState( (prev) => ({
       ...prev,
-      messages: [...prev.messages, botMessage11],
-    }));
-  };
-  const handleYear12 = () => {
-    const botMessage12 = createChatBotMessage('You are currently studying toward NCEA Level 2 and your Dean is...');
-
-    setState( (prev) => ({
-      ...prev,
-      messages: [...prev.messages, botMessage12],
-    }));
-  };
-  const handleYear13 = () => {
-    const botMessage13 = createChatBotMessage('You are currently studying toward NCEA Level 3 and your Dean is...');
-
-    setState( (prev) => ({
-      ...prev,
-      messages: [...prev.messages, botMessage13],
-    }));
-  };
-
-  const handleHello = () => {
-    const botMessage = createChatBotMessage('You are currently studying toward NCEA Level 1 and your Dean is...');
-
-    setState( (prev) => ({
-      ...prev,
-      messages: [...prev.messages, botMessage],
+      messages: [...prev.messages, botMessage, botMessage2],
     }));
   };
 
@@ -54,10 +30,7 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
       {React.Children.map(children, (child) => {
         return React.cloneElement(child, {
           actions: {
-            handleYear11,
-            handleYear12,
-            handleYear13,
-            handleHello,
+            handleCertificateAchievement,
             handleIncorrectResponse,
           },
         });

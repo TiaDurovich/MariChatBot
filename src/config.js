@@ -1,12 +1,12 @@
 import React from "react";
 import { createChatBotMessage } from "react-chatbot-kit";
-import Options from "../src/Options";
+import Options from "../src/Options.js";
 
 const botName = 'the Marist College NCEA Chatbot'
 
 const config = {
   initialMessages: [
-    createChatBotMessage(`Hello, I am here to help with your NCEA.`, {
+    createChatBotMessage(`Hello, I am here to help with your NCEA. Below are some topics to get you started.`, {
       widget: "options",
     }),
   ],

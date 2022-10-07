@@ -3,23 +3,24 @@ import React from "react";
 import "./Options.css";
 
 const Options = (props) => {
-    const options = [
-        {
-            text: "Option 1",
-            handler: props.actionProvider.handleOption1,
-            id: 1,
-        },
-        {text: "Option 2", handler: () => {},id: 2},
-        {text: "Option 3", handler: () => {},id: 3},
-    ];
+  const options = [
+    {
+      text: "Certificate Achievement",
+      handler: props.actionProvider.handleCertificateAchievement,
+      id: 1,
+    },
+    { text: "Endorsement", handler: () => {}, id: 2 },
+    { text: "University Entrance", handler: () => {}, id: 3 },
+    { text: "Career Advisor", handler: () => {}, id: 4 },
+  ];
 
-    const buttonsMarkup = options.map((option) => (
-        <button key={option.id} onclick={option.handler} className="option-button">
-            {option.text}
-        </button>
-    ));
+  const buttonsMarkup = options.map((option) => (
+    <button key={option.id} onClick={option.handler} className="option-button">
+      {option.text}
+    </button>
+  ));
 
-    return <div className="options-container">{buttonsMarkup}</div>
+  return <div className="options-container">{buttonsMarkup}</div>;
 };
 
 export default Options;
