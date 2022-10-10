@@ -1,16 +1,34 @@
-// MessageParser is responsible for taking a mesage and determining a logical response
+// MessageParser takes a mesage and determins a logical response
 import React from 'react';
 import { createChatBotMessage } from 'react-chatbot-kit';
 
 const MessageParser = ({ children, actions }) => {
   const parse = (message) => {
-    if (message.includes('Certificate') || 
-    message.includes('certificate')) {
-      actions.handleCertificateAchievement();
+
+    if (
+      message.includes('Endorsement') ||
+      message.includes('endorsement') ||
+      message.includes('Endorsements') ||
+      message.includes('endorsements')) {
+        actions.handleEndorsement();
+      }
+
+    if (
+      message.includes('Certificate-E') ||
+      message.includes('Certificate-e') ||
+      message.includes('certificate-E') ||
+      message.includes('certificate-e')) {
+        actions.handleCertificateEndorsement();
     }
-    else
-      actions.handleIncorrectResponse();
-  };
+
+    if (
+      message.includes('Subject-E') ||
+      message.includes('subject-e') ||
+      message.includes('Subject-E') ||
+      message.includes('subject-e')) {
+        actions.handleSubjectEndorsement();
+    }
+  }
       
   return (
     <div>

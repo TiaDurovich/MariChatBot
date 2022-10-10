@@ -1,16 +1,32 @@
-
-
+// ActionProvider handles instructions set by MessageParser
 import React from 'react';
 
 const ActionProvider = ({ createChatBotMessage, setState, children }) => {
   //Handling the initial user outcome
-  const handleCertificateAchievement = () => {
-    const botMessage = createChatBotMessage('To gain your NCEA certificate at Level 1 you need... at Level 2 you need... at Level 3 you need...');
-    const botMessage2 = createChatBotMessage("Type 'endorsements' to learn about certificate and course endorsements, or refer back to the list above.");
+  const handleEndorsement = () => {
+    const botMessage = createChatBotMessage("Type 'Certificate-E' or 'Subject-E' to learn about the different endorsements.");
 
     setState( (prev) => ({
       ...prev,
-      messages: [...prev.messages, botMessage, botMessage2],
+      messages: [...prev.messages, botMessage],
+    }));
+  };
+
+  const handleCertificateEndorsement = () => {
+    const botMessage = createChatBotMessage("Cert. endorsement info...");
+
+    setState( (prev) => ({
+      ...prev,
+      messages: [...prev.messages, botMessage],
+    }));
+  };
+
+  const handleSubjectEndorsement = () => {
+    const botMessage = createChatBotMessage("Sub. endorsement info...");
+
+    setState( (prev) => ({
+      ...prev,
+      messages: [...prev.messages, botMessage],
     }));
   };
 
@@ -30,7 +46,9 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
       {React.Children.map(children, (child) => {
         return React.cloneElement(child, {
           actions: {
-            handleCertificateAchievement,
+            handleEndorsement,
+            handleCertificateEndorsement,
+            handleSubjectEndorsement,
             handleIncorrectResponse,
           },
         });
