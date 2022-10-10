@@ -30,6 +30,43 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
     }));
   };
 
+  const handleUE = () => {
+    const botMessage = createChatBotMessage("UE info... type 'approved subjects' to find out about uni approved subjects.");
+
+    setState( (prev) => ({
+      ...prev,
+      messages: [...prev.messages, botMessage],
+    }));
+  };
+
+  const handleUEApproved = () => {
+    const botMessage = createChatBotMessage("UE approved subjects info...");
+
+    setState( (prev) => ({
+      ...prev,
+      messages: [...prev.messages, botMessage],
+    }));
+  };
+
+  const handleSubject = () => {
+    const botMessage = createChatBotMessage("Subject option info...");
+
+    setState( (prev) => ({
+      ...prev,
+      messages: [...prev.messages, botMessage],
+    }));
+  };
+
+  const handlePass = () => {
+    const botMessage = createChatBotMessage("To pass NCEA you need...");
+
+    setState( (prev) => ({
+      ...prev,
+      messages: [...prev.messages, botMessage],
+    }));
+  };
+
+
   //Response to unexpected user input
   const handleIncorrectResponse = () => {
     const botMessage = createChatBotMessage('Please try typing a different response');
@@ -49,6 +86,10 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
             handleEndorsement,
             handleCertificateEndorsement,
             handleSubjectEndorsement,
+            handleUE,
+            handleUEApproved,
+            handleSubject,
+            handlePass,
             handleIncorrectResponse,
           },
         });

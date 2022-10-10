@@ -28,6 +28,51 @@ const MessageParser = ({ children, actions }) => {
       message.includes('subject-e')) {
         actions.handleSubjectEndorsement();
     }
+
+    if (
+      message.includes('UE') ||
+      message.includes('ue') ||
+      message.includes('University entrance') ||
+      message.includes('University Entrance') ||
+      message.includes('university entrance') ||
+      message.includes('Uni Entrance') ||
+      message.includes('Uni entrance') ||
+      message.includes('uni entrance') ||
+      message.includes('Entrance') ||
+      message.includes('entrance')) {
+        actions.handleUE();
+      }
+    else if (
+        message.includes('Approved subject') ||
+        message.includes('Approved Subject') ||
+        message.includes('Approved Subject') ||
+        message.includes('approved subject') ||
+        message.includes('approved subjects') ||
+        message.includes('approved subjects') ||
+        message.includes('Approved subjects') ||
+        message.includes('Approved subjects') ||
+        message.includes('Entrance approved') ||
+        message.includes('entrance approved')) {
+          actions.handleUEApproved();
+      }
+      else if (
+        message.includes('Subject') ||
+        message.includes('subject') ||
+        message.includes('Subjects') ||
+        message.includes('subject')
+        ) {
+          actions.handleSubject();
+      }
+
+      if (
+        message.includes('Pass') ||
+        message.includes('pass') ||
+        message.includes('Achieve') ||
+        message.includes('achieve')
+        ) {
+          actions.handlePass();
+      }
+
   }
       
   return (
