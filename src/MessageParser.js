@@ -71,8 +71,7 @@ const MessageParser = ({ children, actions }) => {
         message.includes('Pass') ||
         message.includes('pass') ||
         message.includes('Achieve') ||
-        message.includes('achieve')
-        ) {
+        message.includes('achieve')) {
           actions.handlePass();
       }
     }
@@ -81,25 +80,171 @@ const MessageParser = ({ children, actions }) => {
         message.includes('Career') ||
         message.includes('career') ||
         message.includes('Advisor') ||
-        message.includes('advisor')
-        ) {
+        message.includes('advisor')) {
           actions.handleCareerAdvisor();
+      }
+      
+      if (
+        message.includes('Gateway') ||
+        message.includes('gateway') ||
+        message.includes('Gate Way') ||
+        message.includes('Gate way') ||
+        message.includes('gate way')) {
+          actions.handleGateway();
       }
 
       if (
+        message.includes('Business') ||
+        message.includes('business')) {
+          actions.handleBusiness();
+      }
+      else if (
+        message.includes('English') ||
+        message.includes('english') ||
+        message.includes('Media') ||
+        message.includes('media')) {
+          actions.handleEnglishMedia();
+      }
+      else if (
+        message.includes('Enhance') ||
+        message.includes('enhance')) {
+          actions.handleEnhance();
+      }
+      else if (
+        message.includes('Language') ||
+        message.includes('language') ||
+        message.includes('Languages')||
+        message.includes('languages')||
+        message.includes('Māori') ||
+        message.includes('māori') ||
+        message.includes('Maori') ||
+        message.includes('maori') ||
+        message.includes('French') ||
+        message.includes('french') ||
+        message.includes('Chinese') ||
+        message.includes('chinese')) {
+          actions.handleLanguages();
+      }
+      else if (
+        message.includes('Maths') ||
+        message.includes('maths') ||
+        message.includes('Mathematics') ||
+        message.includes('mathematics') ||
+        message.includes('Math') ||
+        message.includes('math')) {
+          actions.handleMath();
+      }
+      else if (
+        message.includes('PE') ||
+        message.includes('pe') ||
+        message.includes('Health') ||
+        message.includes('health')) {
+          actions.handlePEHealth();
+      }
+      else if (
+        message.includes('Performing') ||
+        message.includes('performing') ||
+        message.includes('Music') ||
+        message.includes('music') ||
+        message.includes('Drama') ||
+        message.includes('drama') ||
+        message.includes('Dance') ||
+        message.includes('dance')) {
+          actions.handlePerformingArts();
+      }
+      else if (
+        message.includes('RE') ||
+        message.includes('re') ||
+        message.includes('Religious Education') ||
+        message.includes('Religious education') ||
+        message.includes('religious education') ||
+        message.includes('Religious Studies') ||
+        message.includes('Religious studies') ||
+        message.includes('religious studies')) {
+          actions.handleRE();
+      }
+      else if (
+        message.includes('Sciences') ||
+        message.includes('sciences') ||
+        message.includes('Science') ||
+        message.includes('science') ||
+        message.includes('Biology') ||
+        message.includes('biology') ||
+        message.includes('Bio') ||
+        message.includes('bio') ||
+        message.includes('Chemisty') ||
+        message.includes('chemisty') ||
+        message.includes('Chem') ||
+        message.includes('chem') ||
+        message.includes('Physics') ||
+        message.includes('physics')) {
+          actions.handleScience();
+      }
+      else if (
+        message.includes('Social Studies') ||
+        message.includes('Social studies') ||
+        message.includes('social studies') ||
+        message.includes('Social Sciences') ||
+        message.includes('Social sciences') ||
+        message.includes('social sciences') ||
+        message.includes('Geography') ||
+        message.includes('geography') ||
+        message.includes('Geo') ||
+        message.includes('geo') ||
+        message.includes('Classical Studies') ||
+        message.includes('Classical studies') ||
+        message.includes('classical studies') ||
+        message.includes('Clasics') ||
+        message.includes('clasics') ||
+        message.includes('History') ||
+        message.includes('history') ||
+        message.includes('Tourism') ||
+        message.includes('tourism')) {
+          actions.handleSocialStudies();
+      }
+      else if (
+        message.includes('Technology') ||
+        message.includes('technology') ||
+        message.includes('Tech') ||
+        message.includes('tech') ||
+        message.includes('Food') ||
+        message.includes('food') ||
+        message.includes('Home Economics') ||
+        message.includes('Home Eco') ||
+        message.includes('Home economics') ||
+        message.includes('Home eco') ||
+        message.includes('home economics') ||
+        message.includes('home eco') ||
+        message.includes('Fabric') ||
+        message.includes('fabric')) {
+          actions.handleTechnology();
+      }
+      else if (
+        message.includes('Visual Arts') ||
+        message.includes('Visual arts') ||
+        message.includes('visual arts') ||
+        message.includes('Photography') ||
+        message.includes('photography') ||
+        message.includes('Art History') ||
+        message.includes('Art history') ||
+        message.includes('art history') ||
+        message.includes('Design') ||
+        message.includes('design') ||
+        message.includes('Painting') ||
+        message.includes('painting')) {
+          actions.handleVisualArts();
+      }
+      else if (
+        message.includes('Art') ||
+        message.includes('art') ||
+        message.includes('Arts') ||
+        message.includes('arts')) {
+          actions.handleArts();
+      }
+      else if (
         message.includes('Department') ||
         message.includes('department')) {
           actions.handleDepartment();
-      }
-      else if (
-        message.includes('Science Department') ||
-        message.includes('science deparment') ||
-        message.includes('Head of Science') ||
-        message.includes('Head of science') ||
-        message.includes('head of science') ||
-        message.includes('Science HOD') ||
-        message.includes('science HOD')) {
-          actions.handleScience();
       }
 
       if (

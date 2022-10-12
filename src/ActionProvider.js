@@ -85,8 +85,74 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
     }));
   };
 
-  const handleDepartment = () => {
-    const botMessage = createChatBotMessage("Type 'subject department' (e.g. English department) to find the contact details for each HOD.");
+  const handleGateway = () => {
+    const botMessage = createChatBotMessage("To find out about the Gateway program at Marist College, email the Careers Advisor (Ms Catley):");
+    const botMessage2 = createChatBotMessage("gateway@maristcollege.school.nz");
+
+    setState( (prev) => ({
+      ...prev,
+      messages: [...prev.messages, botMessage, botMessage2],
+    }));
+  };
+
+  const handleBusiness = () => {
+    const botMessage = createChatBotMessage("Business info...");
+    setState( (prev) => ({
+      ...prev,
+      messages: [...prev.messages, botMessage],
+    }));
+  };
+
+  const handleEnglishMedia = () => {
+    const botMessage = createChatBotMessage("English/Media info...");
+    setState( (prev) => ({
+      ...prev,
+      messages: [...prev.messages, botMessage],
+    }));
+  };
+
+  const handleEnhance = () => {
+    const botMessage = createChatBotMessage("Enhance info...");
+    setState( (prev) => ({
+      ...prev,
+      messages: [...prev.messages, botMessage],
+    }));
+  };
+
+  const handleLanguages = () => {
+    const botMessage = createChatBotMessage("Languages info...");
+    setState( (prev) => ({
+      ...prev,
+      messages: [...prev.messages, botMessage],
+    }));
+  };
+
+  const handleMath = () => {
+    const botMessage = createChatBotMessage("Math info...");
+    setState( (prev) => ({
+      ...prev,
+      messages: [...prev.messages, botMessage],
+    }));
+  };
+
+  const handlePEHealth = () => {
+    const botMessage = createChatBotMessage("PE/Health info...");
+    setState( (prev) => ({
+      ...prev,
+      messages: [...prev.messages, botMessage],
+    }));
+  };
+
+  const handlePerformingArts = () => {
+    const botMessage = createChatBotMessage("Performing Arts info...");
+    setState( (prev) => ({
+      ...prev,
+      messages: [...prev.messages, botMessage],
+    }));
+  };
+
+  const handleRE = () => {
+    const botMessage = createChatBotMessage("RE info...");
     setState( (prev) => ({
       ...prev,
       messages: [...prev.messages, botMessage],
@@ -100,6 +166,46 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
     setState( (prev) => ({
       ...prev,
       messages: [...prev.messages, botMessage, botMessage2],
+    }));
+  };
+
+  const handleSocialStudies = () => {
+    const botMessage = createChatBotMessage("Social Studies info...");
+    setState( (prev) => ({
+      ...prev,
+      messages: [...prev.messages, botMessage],
+    }));
+  };
+
+  const handleTechnology = () => {
+    const botMessage = createChatBotMessage("Technology info...");
+    setState( (prev) => ({
+      ...prev,
+      messages: [...prev.messages, botMessage],
+    }));
+  };
+
+  const handleVisualArts = () => {
+    const botMessage = createChatBotMessage("Visual Arts info...");
+    setState( (prev) => ({
+      ...prev,
+      messages: [...prev.messages, botMessage],
+    }));
+  };
+
+  const handleArts = () => {
+    const botMessage = createChatBotMessage("Type 'Visual Arts' or 'Performing Arts'.");
+    setState( (prev) => ({
+      ...prev,
+      messages: [...prev.messages, botMessage],
+    }));
+  };
+
+  const handleDepartment = () => {
+    const botMessage = createChatBotMessage("Type 'subject department' (e.g. English department) to find the contact details for each HOD.");
+    setState( (prev) => ({
+      ...prev,
+      messages: [...prev.messages, botMessage],
     }));
   };
 
@@ -210,6 +316,20 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
             handleCompulsorySubjects,
             handlePass,
             handleCareerAdvisor,
+            handleGateway,
+            handleBusiness,
+            handleEnglishMedia,
+            handleEnhance,
+            handleLanguages,
+            handleMath,
+            handlePEHealth,
+            handlePerformingArts,
+            handleRE,
+            handleScience,
+            handleSocialStudies,
+            handleTechnology,
+            handleVisualArts,
+            handleArts,
             handleDepartment,
             handleScience,
             handleExamTimetable,
