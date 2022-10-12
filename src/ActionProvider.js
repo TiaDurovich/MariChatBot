@@ -130,6 +130,60 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
     }));
   };
 
+  const handleLiteracyNumeracy = () => {
+    const botMessage = createChatBotMessage("Link to literacy and numeracy info...");
+
+    setState( (prev) => ({
+      ...prev,
+      messages: [...prev.messages, botMessage],
+    }));
+  };
+
+  const handleCredits = () => {
+    const botMessage = createChatBotMessage("To find credit information visit... To check your credit count visit...");
+
+    setState( (prev) => ({
+      ...prev,
+      messages: [...prev.messages, botMessage],
+    }));
+  };
+
+  const handleYear11Dean = () => {
+    const botMessage = createChatBotMessage("Year 11 Dean info...");
+
+    setState( (prev) => ({
+      ...prev,
+      messages: [...prev.messages, botMessage],
+    }));
+  };
+
+  const handleYear12Dean = () => {
+    const botMessage = createChatBotMessage("Year 12 Dean info...");
+
+    setState( (prev) => ({
+      ...prev,
+      messages: [...prev.messages, botMessage],
+    }));
+  };
+
+  const handleYear13Dean = () => {
+    const botMessage = createChatBotMessage("Year 13 Dean info...");
+
+    setState( (prev) => ({
+      ...prev,
+      messages: [...prev.messages, botMessage],
+    }));
+  };
+
+  const handleDeans = () => {
+    const botMessage = createChatBotMessage("Type 'Year 11/12/13 Dean' to find information about each dean.");
+
+    setState( (prev) => ({
+      ...prev,
+      messages: [...prev.messages, botMessage],
+    }));
+  };
+
 
   //Response to unexpected user input
   const handleIncorrectResponse = () => {
@@ -161,6 +215,12 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
             handleExamTimetable,
             handleExamResultsRelease,
             handleRankScore,
+            handleLiteracyNumeracy,
+            handleCredits,
+            handleYear11Dean,
+            handleYear12Dean,
+            handleYear13Dean,
+            handleDeans,
             handleIncorrectResponse,
           },
         });

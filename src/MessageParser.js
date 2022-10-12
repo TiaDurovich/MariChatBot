@@ -118,6 +118,7 @@ const MessageParser = ({ children, actions }) => {
 
       if (
         message.includes('results released') ||
+        message.includes('results') ||
         message.includes('released') ||
         message.includes('Results released')) {
           actions.handleExamResultsRelease();
@@ -128,6 +129,77 @@ const MessageParser = ({ children, actions }) => {
         message.includes('rank score')) {
           actions.handleRankScore();
       }
+
+      if (
+        message.includes('Literacy') ||
+        message.includes('literacy') ||
+        message.includes('Numeracy') ||
+        message.includes('numeracy')) {
+          actions.handleLiteracyNumeracy();
+      }
+      else if (
+        message.includes('Credits') ||
+        message.includes('credits') ||
+        message.includes('Credit') ||
+        message.includes('credit')) {
+          actions.handleCredits();
+      }
+
+      if (
+        message.includes('Y11 Dean') ||
+        message.includes('Y11 dean') ||
+        message.includes('Y11 Dean') ||
+        message.includes('y11 dean') ||
+        message.includes('Year 11 Dean') ||
+        message.includes('Year 11 dean') ||
+        message.includes('year 11 dean') ||
+        message.includes('Head of Year 11') ||
+        message.includes('Head of year 11') ||
+        message.includes('head of Year 11') ||
+        message.includes('head of year 11')) {
+          actions.handleYear11Dean();
+      }
+      else if (
+        message.includes('Y12 Dean') ||
+        message.includes('Y12 dean') ||
+        message.includes('Y12 Dean') ||
+        message.includes('y12 dean') ||
+        message.includes('Year 12 Dean') ||
+        message.includes('Year 12 dean') ||
+        message.includes('year 12 dean') ||
+        message.includes('Head of year 12') ||
+        message.includes('Head of Year 12') ||
+        message.includes('head of year 12') ||
+        message.includes('head of Year 12')) {
+          actions.handleYear12Dean();
+      }
+      else if (
+        message.includes('Y13 Dean') ||
+        message.includes('Y13 dean') ||
+        message.includes('Y13 Dean') ||
+        message.includes('y13 dean') ||
+        message.includes('Year 13 Dean') ||
+        message.includes('Year 13 dean') ||
+        message.includes('year 13 dean') ||
+        message.includes('Head of year 13') ||
+        message.includes('head of year 13') ||
+        message.includes('Head of Year 13') ||
+        message.includes('head of Year 13')) {
+          actions.handleYear13Dean();
+      }
+      else if (
+        message.includes('Dean') ||
+        message.includes('dean') ||
+        message.includes('Deans') ||
+        message.includes('deans') ||
+        message.includes('Head of year') ||
+        message.includes('head of year') ||
+        message.includes('head of Year') ||
+        message.includes('Head of Year')) {
+          actions.handleDeans();
+      }
+
+      
   }
       
   return (
@@ -143,3 +215,4 @@ const MessageParser = ({ children, actions }) => {
 };
 
 export default MessageParser;
+
