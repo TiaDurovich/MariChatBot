@@ -153,6 +153,7 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
 
   const handleRE = () => {
     const botMessage = createChatBotMessage("RE info...");
+
     setState( (prev) => ({
       ...prev,
       messages: [...prev.messages, botMessage],
@@ -290,6 +291,15 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
     }));
   };
 
+  const handleMoreInfo = () => {
+    const botMessage = createChatBotMessage("For further information, please contact the Careers Advisor, Ms Catley:");
+    const botMessage2 = createChatBotMessage("gateway@maristcollege.school.nz");
+
+    setState( (prev) => ({
+      ...prev,
+      messages: [...prev.messages, botMessage, botMessage2],
+    }));
+  };
 
   //Response to unexpected user input
   const handleIncorrectResponse = () => {
@@ -341,6 +351,7 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
             handleYear12Dean,
             handleYear13Dean,
             handleDeans,
+            handleMoreInfo,
             handleIncorrectResponse,
           },
         });

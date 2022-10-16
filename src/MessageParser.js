@@ -66,25 +66,22 @@ const MessageParser = ({ children, actions }) => {
         message.includes('Subjects') ||
         message.includes('subject')) {
           actions.handleSubjectOptions();
-
-      if (
+      }
+      else if (
         message.includes('Pass') ||
         message.includes('pass') ||
         message.includes('Achieve') ||
         message.includes('achieve')) {
           actions.handlePass();
       }
-    }
-
-      if (
+      else if (
         message.includes('Career') ||
         message.includes('career') ||
         message.includes('Advisor') ||
         message.includes('advisor')) {
           actions.handleCareerAdvisor();
       }
-      
-      if (
+      else if (
         message.includes('Gateway') ||
         message.includes('gateway') ||
         message.includes('Gate Way') ||
@@ -92,8 +89,7 @@ const MessageParser = ({ children, actions }) => {
         message.includes('gate way')) {
           actions.handleGateway();
       }
-
-      if (
+      else if (
         message.includes('Business') ||
         message.includes('business')) {
           actions.handleBusiness();
@@ -154,7 +150,6 @@ const MessageParser = ({ children, actions }) => {
       }
       else if (
         message.includes('RE') ||
-        message.includes('re') ||
         message.includes('Religious Education') ||
         message.includes('Religious education') ||
         message.includes('religious education') ||
@@ -246,8 +241,7 @@ const MessageParser = ({ children, actions }) => {
         message.includes('department')) {
           actions.handleDepartment();
       }
-
-      if (
+      else if (
         message.includes('Exam timetable') ||
         message.includes('exam timetable') ||
         message.includes('when are exams') ||
@@ -256,26 +250,23 @@ const MessageParser = ({ children, actions }) => {
         message.includes('Time Table') ||
         message.includes('Time table') ||
         message.includes('Timetable') ||
-        message.includes('timetable')
-        ) {
+        message.includes('timetable')) {
           actions.handleExamTimetable();
       }
-
-      if (
+      else if (
         message.includes('results released') ||
         message.includes('results') ||
         message.includes('released') ||
         message.includes('Results released')) {
           actions.handleExamResultsRelease();
       }
-
-      if (
+      else if (
         message.includes('Rank Score') ||
+        message.includes('Rank score') ||
         message.includes('rank score')) {
           actions.handleRankScore();
       }
-
-      if (
+      else if (
         message.includes('Literacy') ||
         message.includes('literacy') ||
         message.includes('Numeracy') ||
@@ -289,8 +280,7 @@ const MessageParser = ({ children, actions }) => {
         message.includes('credit')) {
           actions.handleCredits();
       }
-
-      if (
+      else if (
         message.includes('Y11 Dean') ||
         message.includes('Y11 dean') ||
         message.includes('Y11 Dean') ||
@@ -343,7 +333,16 @@ const MessageParser = ({ children, actions }) => {
         message.includes('Head of Year')) {
           actions.handleDeans();
       }
-
+      else if (
+        message.includes('More info') ||
+        message.includes('more info') ||
+        message.includes('Further info') ||
+        message.includes('further info')) {
+          actions.handleMoreInfo();
+        }
+      else {
+          actions.handleIncorrectResponse();
+      }
       
   }
       
