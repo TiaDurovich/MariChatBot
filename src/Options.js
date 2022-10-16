@@ -11,7 +11,6 @@ const Options = (props) => {
     },
     { text: "Endorsement", handler: () => {}, id: 2 },
     { text: "University Entrance", handler: () => {}, id: 3 },
-    { text: "Career Advisor", handler: () => {}, id: 4 },
   ];
 
   const buttonsMarkup = options.map((option) => (

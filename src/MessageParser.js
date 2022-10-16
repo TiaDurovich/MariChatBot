@@ -4,8 +4,10 @@ import { createChatBotMessage } from 'react-chatbot-kit';
 
 const MessageParser = ({ children, actions }) => {
   const parse = (message) => {
-
+    //Variables containing object data
     if (
+      message.includes('Certificate') ||
+      message.includes('certificate') ||
       message.includes('Certificate Endorsement') ||
       message.includes('Certificate endorsement') ||
       message.includes('certificate endorsement')) {
