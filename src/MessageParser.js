@@ -1,40 +1,34 @@
 // MessageParser takes a mesage and determins a logical response
 import React from 'react';
-import { createChatBotMessage } from 'react-chatbot-kit';
+import Chatbot, { createChatBotMessage } from 'react-chatbot-kit';
+
+
+var certificateEndorsement = ["Certificate Endorsement", "Certificate endorsement", "certificate endorsement"];
+var subjectEndorsement = ["Subject Endorsement", "Subject endorsement", "subject endorsement"];
+var generalEndorsement = ["Endorse", "endorse"];
 
 const MessageParser = ({ children, actions }) => {
   const parse = (message) => {
     //Variables containing object data
 
-    if (
-      message.includes('Options')) {
-        actions.handleOptions();
+    for(var i = 0, size = certificateEndorsement.length; i < size ; i++){
+      var item = certificateEndorsement[i];
+      var item2 = subjectEndorsement[i];
+      var item3 = generalEndorsement[i];
+      if (message.includes(item)){
+         actions.handleCertificateEndorsement(item);
       }
-    else if (
-      message.includes('Certificate') ||
-      message.includes('certificate') ||
-      message.includes('Certificate Endorsement') ||
-      message.includes('Certificate endorsement') ||
-      message.includes('certificate endorsement')) {
-        actions.handleCertificateEndorsement();
-    }
-    else if (
-      message.includes('Subject Endorsement') ||
-      message.includes('Subject endorsement') ||
-      message.includes('subject endorsement') ||
-      message.includes('Subject endorsement')) {
-        actions.handleSubjectEndorsement();
-    }
-    else if (
-      message.includes('Endorse') ||
-      message.includes('endorse') ||
-      message.includes('Endorsement') ||
-      message.includes('endorsement') ||
-      message.includes('Endorsements') ||
-      message.includes('endorsements')) {
-        actions.handleEndorsement();
+      else if (message.includes(item2)){
+        actions.handleSubjectEndorsement(item2);
       }
-    else if (
+      else if (message.includes(item3)){
+        actions.handleEndorsement(item3);
+     }
+   }
+  
+  
+   
+  if (
       message.includes('UE') ||
       message.includes('ue') ||
       message.includes('University entrance') ||
@@ -341,16 +335,15 @@ const MessageParser = ({ children, actions }) => {
           actions.handleDeans();
       }
       else if (
+        message.includes('Help') ||
+        message.includes('help') ||
         message.includes('More info') ||
         message.includes('more info') ||
         message.includes('Further info') ||
         message.includes('further info')) {
           actions.handleMoreInfo();
         }
-      else {
-          actions.handleIncorrectResponse();
-      }
-      
+
   }
       
   return (
