@@ -21,7 +21,7 @@ const config = {
   botName: botName,
   
   initialMessages: [
-    createChatBotMessage(`Hello, I am here to help with your NCEA. Below are some topics to get you started.`),
+    createChatBotMessage(`Hello, I am here to help with your NCEA. You can ask me about...`) 
   ],
 
   customStyles: {

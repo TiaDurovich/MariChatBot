@@ -43,46 +43,18 @@ const MessageParser = ({ children, actions }) => {
 
     
 
-   for(var i = 0, size = certificateEndorsement.length; i < size ; i++){
-    var item = certificateEndorsement[i];
-    if (message.includes(item)){
-       actions.handleCertificateEndorsement(item);
+    for(var i = 0, size = generalEndorsement.length; i < size ; i++){
+      var item = generalEndorsement[i];
+      if (message.includes(item)){
+        actions.handleEndorsement(item);
     }
-    for(var i = 0, size = subjectEndorsement.length; i < size ; i++){
-      var item2 = subjectEndorsement[i];
-      if (message.includes(item2)) {
-        actions.handleSubjectEndorsement(item2);
-      }
-      for(var i = 0, size = generalEndorsement.length; i < size ; i++){
-        var item3 = generalEndorsement[i];
-        if (message.includes(item3)) {
-          actions.handleEndorsement(item3);
-        }
-      }
-      }
-    }
-
+  } 
 
 
     for(var i = 0, size = universityEntrance.length; i < size ; i++){
       var item = universityEntrance[i];
       if (message.includes(item)){
         actions.handleUE(item);
-      }
-    }
-
-    //NEED TO FIX SUBJECTS LOOP
-    for(var i = 0, size = approvedSubjects.length; i < size ; i++){
-      var item = approvedSubjects[i];
-      if (message.includes(item)){
-        actions.handleUEApproved(item);
-      }
-    }
-
-    for(var i = 0, size = compulsorySubjects.length; i < size ; i++){
-      var item = compulsorySubjects[i];
-      if (message.includes(item)){
-        actions.handleCompulsorySubjects(item);
       }
     }
 
@@ -195,13 +167,6 @@ const MessageParser = ({ children, actions }) => {
       var item = visualArts[i];
       if (message.includes(item)){
         actions.handleVisualArts(item);
-      }
-    }
-
-    for(var i = 0, size = department.length; i < size ; i++){
-      var item = department[i];
-      if (message.includes(item)){
-        actions.handleDepartment(item);
       }
     }
 
