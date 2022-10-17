@@ -3,57 +3,66 @@ import React from 'react';
 import Chatbot, { createChatBotMessage } from 'react-chatbot-kit';
 
 
-var certificateEndorsement = ["Certificate Endorsement", "Certificate endorsement", "certificate endorsement"];
-var subjectEndorsement = ["Subject Endorsement", "Subject endorsement", "subject endorsement"];
-var generalEndorsement = ["Endorse", "endorse"];
-var universityEntrance = ["UE", "ue", "University Entrance", "University entrance", "university entrance", "Uni Entrance", "Uni entrance", "uni entrance"];
-var approvedSubjects = ["Approved Subject", "Approved subject", "approved subject"];
-var compulsorySubjects = ["Compulsory Subject", "Compulsory subject", "compulsory subject", "Compulsory", "compulsory"];
-var subject = ["Subject", "subject"];
-var pass = ["Pass", "pass", "Achieve", "achieve"];
-var careerAdvisor = ["Career", "career", "Advisor", "advisor"];
-var gateway = ["Gate", "gate"];
-var business = ["Business", "business"];
-var english = ["English", "english", "Media", "media"];
-var enhance = ["Enhance", "enhance"];
-var languages = ["Language", "language", "Māori", "māori", "Maori", "maori", "French", "french", "Chinese", "chinese"];
-var math = ["Math", "math"];
-var peHealth = ["PE", "pe", "Health", "health"];
-var performingArts = ["Perform", "perform", "Music", "music", "Drama", "drama", "Dance", "dance"];
-var religiousEducation = ["Religious", "religious", "RE"];
-var science = ["Science", "science", "Chem", "chem", "Bio", "bio", "Physics", "physics"];
-var socialStudies = ["Social Studies", "Social studies", "social studies", "Geo", "geo", "Classic", "classic", "History", "history", "Tourism", "tourism"];
-var technology = ["Digi", "digi", "Food", "food", "Home Eco", "Home eco", "home eco", "Fabric", "fabric"];
-var visualArts = ["Art", "art", "Photography", "photography", "Design", "design", "Painting", "painting"];
-var department = ["Department", "department"];
-var examTimetable = ["Timetable", "timetable", "When are exams", "when are exams"];
-var examResultsReleased = ["Released", "released"];
-var rankScore = ["Rank Score", "Rank score", "rank score"];
-var literacyNumeracy = ["Literacy", "literacy", "Numeracy", "numeracy"];
-var credits = ["Credit", "credit"];
-var year11Dean = ["Y11 Dean", "Y11 dean", "y11 Dean", "y11 dean", "Year 11 Dean", "Year 11 dean", "year 11 Dean", "year 11 dean", "Dean of Year 11", "dean of Year 11", "dean of Year 11", "dean of year 11"];
-var year12Dean = ["Y12 Dean", "Y12 dean", "y12 Dean", "y12 dean", "Year 12 Dean", "Year 12 dean", "year 12 Dean", "year 12 dean", "Dean of Year 12", "dean of Year 12", "dean of Year 12", "dean of year 12"];
-var year13Dean = ["Y13 Dean", "Y13 dean", "y13 Dean", "y13 dean", "Year 13 Dean", "Year 13 dean", "year 13 Dean", "year 13 dean", "Dean of Year 13", "dean of Year 13", "dean of Year 13", "dean of year 13"];
-var help = ["Help", "help", "Moro Info", "More info", "more info", "Further Info", "Further info", "further info"];
+const certificateEndorsement = ["Certificate Endorsement", "Certificate endorsement", "certificate endorsement"];
+const subjectEndorsement = ["Subject Endorsement", "Subject endorsement", "subject endorsement"];
+const generalEndorsement = ["Endorse", "endorse"];
+const universityEntrance = ["UE", "ue", "University Entrance", "University entrance", "university entrance", "Uni Entrance", "Uni entrance", "uni entrance"];
+const approvedSubjects = ["Approved Subject", "Approved subject", "approved subject"];
+const compulsorySubjects = ["Compulsory Subject", "Compulsory subject", "compulsory subject", "Compulsory", "compulsory"];
+const subject = ["Subject", "subject"];
+const pass = ["Pass", "pass", "Achieve", "achieve"];
+const careerAdvisor = ["Career", "career", "Advisor", "advisor"];
+const gateway = ["Gate", "gate"];
+const business = ["Business", "business"];
+const english = ["English", "english", "Media", "media"];
+const enhance = ["Enhance", "enhance"];
+const languages = ["Language", "language", "Māori", "māori", "Maori", "maori", "French", "french", "Chinese", "chinese"];
+const math = ["Math", "math"];
+const peHealth = ["PE", "pe", "Health", "health"];
+const performingArts = ["Perform", "perform", "Music", "music", "Drama", "drama", "Dance", "dance"];
+const religiousEducation = ["Religious", "religious", "RE"];
+const science = ["Science", "science", "Chem", "chem", "Bio", "bio", "Physics", "physics"];
+const socialStudies = ["Social Studies", "Social studies", "social studies", "Geo", "geo", "Classic", "classic", "History", "history", "Tourism", "tourism"];
+const technology = ["Digi", "digi", "Food", "food", "Home Eco", "Home eco", "home eco", "Fabric", "fabric"];
+const visualArts = ["Art", "art", "Photography", "photography", "Design", "design", "Painting", "painting"];
+const department = ["Department", "department"];
+const examTimetable = ["Timetable", "timetable", "When are exams", "when are exams"];
+const examResultsReleased = ["Released", "released"];
+const rankScore = ["Rank Score", "Rank score", "rank score"];
+const literacyNumeracy = ["Literacy", "literacy", "Numeracy", "numeracy"];
+const credits = ["Credit", "credit"];
+const year11Dean = ["Y11 Dean", "Y11 dean", "y11 Dean", "y11 dean", "Year 11 Dean", "Year 11 dean", "year 11 Dean", "year 11 dean", "Dean of Year 11", "dean of Year 11", "dean of Year 11", "dean of year 11"];
+const year12Dean = ["Y12 Dean", "Y12 dean", "y12 Dean", "y12 dean", "Year 12 Dean", "Year 12 dean", "year 12 Dean", "year 12 dean", "Dean of Year 12", "dean of Year 12", "dean of Year 12", "dean of year 12"];
+const year13Dean = ["Y13 Dean", "Y13 dean", "y13 Dean", "y13 dean", "Year 13 Dean", "Year 13 dean", "year 13 Dean", "year 13 dean", "Dean of Year 13", "dean of Year 13", "dean of Year 13", "dean of year 13"];
+const help = ["Help", "help", "Moro Info", "More info", "more info", "Further Info", "Further info", "further info"];
+
 
 const MessageParser = ({ children, actions }) => {
   const parse = (message) => {
     //Variables containing object data
 
-    for(var i = 0, size = certificateEndorsement.length; i < size ; i++){
-      var item = certificateEndorsement[i];
+    
+
+   for(var i = 0, size = certificateEndorsement.length; i < size ; i++){
+    var item = certificateEndorsement[i];
+    if (message.includes(item)){
+       actions.handleCertificateEndorsement(item);
+    }
+    for(var i = 0, size = subjectEndorsement.length; i < size ; i++){
       var item2 = subjectEndorsement[i];
-      var item3 = generalEndorsement[i];
-      if (message.includes(item)){
-         actions.handleCertificateEndorsement(item);
-      }
-      else if (message.includes(item2)){
+      if (message.includes(item2)) {
         actions.handleSubjectEndorsement(item2);
       }
-      else if (message.includes(item3)){
-        actions.handleEndorsement(item3);
-     }
-   }
+      for(var i = 0, size = generalEndorsement.length; i < size ; i++){
+        var item3 = generalEndorsement[i];
+        if (message.includes(item3)) {
+          actions.handleEndorsement(item3);
+        }
+      }
+      }
+    }
+
+
 
     for(var i = 0, size = universityEntrance.length; i < size ; i++){
       var item = universityEntrance[i];
@@ -62,6 +71,7 @@ const MessageParser = ({ children, actions }) => {
       }
     }
 
+    //NEED TO FIX SUBJECTS LOOP
     for(var i = 0, size = approvedSubjects.length; i < size ; i++){
       var item = approvedSubjects[i];
       if (message.includes(item)){
