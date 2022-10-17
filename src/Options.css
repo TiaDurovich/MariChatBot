@@ -1,16 +1,13 @@
-button:hover {
-  background-color: #a4997298;
-  }
+.options-container {
+  display: flex;
+  flex-wrap: wrap;
+}
 
-button {
+.option-button {
   margin: 5px;
   border-radius: 25px;
   padding: 8px;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
-
-  background: #FFFFFF;
-  font-family: -apple-system, BlinkMacSystemFont;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  border-color: blue;
+  background: transparent;
+  text-align: center;
 }
-

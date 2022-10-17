@@ -1,8 +1,23 @@
 // ActionProvider handles instructions set by MessageParser
 import React from 'react';
 
+
 const ActionProvider = ({ createChatBotMessage, setState, children }) => {
   //Handling the initial user outcome
+
+  const handleOptions = () => {
+    const botMessage = createChatBotMessage('Here are some topic ideas:');
+    const botMessage2 = createChatBotMessage('Certificate Endorsements');
+    const botMessage3 = createChatBotMessage('Career Advisor');
+    const botMessage4 = createChatBotMessage('Univserity Entrance');
+
+
+    setState( (prev) => ({
+      ...prev,
+      messages: [...prev.messages, botMessage, botMessage2, botMessage3, botMessage4],
+    }));
+  };
+
   const handleEndorsement = () => {
     const botMessage = createChatBotMessage("Type 'Certificate endorsement' or 'Subject endorsement' to learn about the different endorsements.");
 
@@ -317,6 +332,7 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
       {React.Children.map(children, (child) => {
         return React.cloneElement(child, {
           actions: {
+            handleOptions,
             handleEndorsement,
             handleCertificateEndorsement,
             handleSubjectEndorsement,

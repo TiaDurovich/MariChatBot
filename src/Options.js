@@ -6,7 +6,7 @@ const Options = (props) => {
   const options = [
     {
       text: "Certificate Achievement",
-      handler: props.actionProvider.handleCertificateAchievement,
+      handler: props.actionProvider.handleEndorsement,
       id: 1,
     },
     { text: "Endorsement", handler: () => {}, id: 2 },

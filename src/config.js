@@ -10,19 +10,19 @@ window.onload = function onload() {
   alert("Welcome to the Marist College NCEA Chatbot. Please note that the chatbot is spelling sensitive.") 
 }
 
+var timeout;
+document.onmousemove = function(){
+  clearTimeout(timeout);
+  timeout = setTimeout(function(){alert("move your mouse");}, 45000);
+};
+
 const config = {
   botName: botName,
+  
   initialMessages: [
-    createChatBotMessage(`Hello, I am here to help with your NCEA. Below are some topics to get you started.`, {
-      widget: "options",
-      }),
+    createChatBotMessage(`Hello, I am here to help with your NCEA. Below are some topics to get you started.`),
   ],
-  widgets: [
-    {
-      widgetName: "options",
-      widgetFunc: (props) => <Options {...props} />,
-    },
-  ],
+
   customStyles: {
     botMessageBox: {
       backgroundColor: '#A7986D',

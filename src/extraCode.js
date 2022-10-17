@@ -48,3 +48,23 @@ if (message.includes('Year 11') ||
           messages: [...prev.messages, botMessage13],
         }));
       };
+
+
+      //Button CSS
+
+      button:hover {
+        background-color: #a4997298;
+        }
+      
+      button {
+        margin: 5px;
+        border-radius: 25px;
+        padding: 8px;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
+      
+        background: #FFFFFF;
+        font-family: -apple-system, BlinkMacSystemFont;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+      
