@@ -6,6 +6,35 @@ import Chatbot, { createChatBotMessage } from 'react-chatbot-kit';
 var certificateEndorsement = ["Certificate Endorsement", "Certificate endorsement", "certificate endorsement"];
 var subjectEndorsement = ["Subject Endorsement", "Subject endorsement", "subject endorsement"];
 var generalEndorsement = ["Endorse", "endorse"];
+var universityEntrance = ["UE", "ue", "University Entrance", "University entrance", "university entrance", "Uni Entrance", "Uni entrance", "uni entrance"];
+var approvedSubjects = ["Approved Subject", "Approved subject", "approved subject"];
+var compulsorySubjects = ["Compulsory Subject", "Compulsory subject", "compulsory subject", "Compulsory", "compulsory"];
+var subject = ["Subject", "subject"];
+var pass = ["Pass", "pass", "Achieve", "achieve"];
+var careerAdvisor = ["Career", "career", "Advisor", "advisor"];
+var gateway = ["Gate", "gate"];
+var business = ["Business", "business"];
+var english = ["English", "english", "Media", "media"];
+var enhance = ["Enhance", "enhance"];
+var languages = ["Language", "language", "Māori", "māori", "Maori", "maori", "French", "french", "Chinese", "chinese"];
+var math = ["Math", "math"];
+var peHealth = ["PE", "pe", "Health", "health"];
+var performingArts = ["Perform", "perform", "Music", "music", "Drama", "drama", "Dance", "dance"];
+var religiousEducation = ["Religious", "religious", "RE"];
+var science = ["Science", "science", "Chem", "chem", "Bio", "bio", "Physics", "physics"];
+var socialStudies = ["Social Studies", "Social studies", "social studies", "Geo", "geo", "Classic", "classic", "History", "history", "Tourism", "tourism"];
+var technology = ["Digi", "digi", "Food", "food", "Home Eco", "Home eco", "home eco", "Fabric", "fabric"];
+var visualArts = ["Art", "art", "Photography", "photography", "Design", "design", "Painting", "painting"];
+var department = ["Department", "department"];
+var examTimetable = ["Timetable", "timetable", "When are exams", "when are exams"];
+var examResultsReleased = ["Released", "released"];
+var rankScore = ["Rank Score", "Rank score", "rank score"];
+var literacyNumeracy = ["Literacy", "literacy", "Numeracy", "numeracy"];
+var credits = ["Credit", "credit"];
+var year11Dean = ["Y11 Dean", "Y11 dean", "y11 Dean", "y11 dean", "Year 11 Dean", "Year 11 dean", "year 11 Dean", "year 11 dean", "Dean of Year 11", "dean of Year 11", "dean of Year 11", "dean of year 11"];
+var year12Dean = ["Y12 Dean", "Y12 dean", "y12 Dean", "y12 dean", "Year 12 Dean", "Year 12 dean", "year 12 Dean", "year 12 dean", "Dean of Year 12", "dean of Year 12", "dean of Year 12", "dean of year 12"];
+var year13Dean = ["Y13 Dean", "Y13 dean", "y13 Dean", "y13 dean", "Year 13 Dean", "Year 13 dean", "year 13 Dean", "year 13 dean", "Dean of Year 13", "dean of Year 13", "dean of Year 13", "dean of year 13"];
+var help = ["Help", "help", "Moro Info", "More info", "more info", "Further Info", "Further info", "further info"];
 
 const MessageParser = ({ children, actions }) => {
   const parse = (message) => {
@@ -25,325 +54,209 @@ const MessageParser = ({ children, actions }) => {
         actions.handleEndorsement(item3);
      }
    }
-  
-  
-   
-  if (
-      message.includes('UE') ||
-      message.includes('ue') ||
-      message.includes('University entrance') ||
-      message.includes('University Entrance') ||
-      message.includes('university entrance') ||
-      message.includes('Uni Entrance') ||
-      message.includes('Uni entrance') ||
-      message.includes('uni entrance') ||
-      message.includes('Entrance') ||
-      message.includes('entrance')) {
-        actions.handleUE();
-      }
-    else if (
-        message.includes('Approved subject') ||
-        message.includes('Approved Subject') ||
-        message.includes('Approved Subject') ||
-        message.includes('approved subject') ||
-        message.includes('approved subjects') ||
-        message.includes('approved subjects') ||
-        message.includes('Approved subjects') ||
-        message.includes('Approved subjects') ||
-        message.includes('Entrance approved') ||
-        message.includes('entrance approved')) {
-          actions.handleUEApproved();
-      }
-      else if (
-        message.includes('Compulsory subject') ||
-        message.includes('compulsory subject') ||
-        message.includes('Compulsory') ||
-        message.includes('compulsory')) {
-          actions.handleCompulsorySubjects();
-      }
-      else if (
-        message.includes('Subject') ||
-        message.includes('subject') ||
-        message.includes('Subjects') ||
-        message.includes('subject')) {
-          actions.handleSubjectOptions();
-      }
-      else if (
-        message.includes('Pass') ||
-        message.includes('pass') ||
-        message.includes('Achieve') ||
-        message.includes('achieve')) {
-          actions.handlePass();
-      }
-      else if (
-        message.includes('Career') ||
-        message.includes('career') ||
-        message.includes('Advisor') ||
-        message.includes('advisor')) {
-          actions.handleCareerAdvisor();
-      }
-      else if (
-        message.includes('Gateway') ||
-        message.includes('gateway') ||
-        message.includes('Gate Way') ||
-        message.includes('Gate way') ||
-        message.includes('gate way')) {
-          actions.handleGateway();
-      }
-      else if (
-        message.includes('Business') ||
-        message.includes('business')) {
-          actions.handleBusiness();
-      }
-      else if (
-        message.includes('English') ||
-        message.includes('english') ||
-        message.includes('Media') ||
-        message.includes('media')) {
-          actions.handleEnglishMedia();
-      }
-      else if (
-        message.includes('Enhance') ||
-        message.includes('enhance')) {
-          actions.handleEnhance();
-      }
-      else if (
-        message.includes('Language') ||
-        message.includes('language') ||
-        message.includes('Languages')||
-        message.includes('languages')||
-        message.includes('Māori') ||
-        message.includes('māori') ||
-        message.includes('Maori') ||
-        message.includes('maori') ||
-        message.includes('French') ||
-        message.includes('french') ||
-        message.includes('Chinese') ||
-        message.includes('chinese')) {
-          actions.handleLanguages();
-      }
-      else if (
-        message.includes('Maths') ||
-        message.includes('maths') ||
-        message.includes('Mathematics') ||
-        message.includes('mathematics') ||
-        message.includes('Math') ||
-        message.includes('math')) {
-          actions.handleMath();
-      }
-      else if (
-        message.includes('PE') ||
-        message.includes('pe') ||
-        message.includes('Health') ||
-        message.includes('health')) {
-          actions.handlePEHealth();
-      }
-      else if (
-        message.includes('Performing') ||
-        message.includes('performing') ||
-        message.includes('Music') ||
-        message.includes('music') ||
-        message.includes('Drama') ||
-        message.includes('drama') ||
-        message.includes('Dance') ||
-        message.includes('dance')) {
-          actions.handlePerformingArts();
-      }
-      else if (
-        message.includes('RE') ||
-        message.includes('Religious Education') ||
-        message.includes('Religious education') ||
-        message.includes('religious education') ||
-        message.includes('Religious Studies') ||
-        message.includes('Religious studies') ||
-        message.includes('religious studies')) {
-          actions.handleRE();
-      }
-      else if (
-        message.includes('Sciences') ||
-        message.includes('sciences') ||
-        message.includes('Science') ||
-        message.includes('science') ||
-        message.includes('Biology') ||
-        message.includes('biology') ||
-        message.includes('Bio') ||
-        message.includes('bio') ||
-        message.includes('Chemisty') ||
-        message.includes('chemisty') ||
-        message.includes('Chem') ||
-        message.includes('chem') ||
-        message.includes('Physics') ||
-        message.includes('physics')) {
-          actions.handleScience();
-      }
-      else if (
-        message.includes('Social Studies') ||
-        message.includes('Social studies') ||
-        message.includes('social studies') ||
-        message.includes('Social Sciences') ||
-        message.includes('Social sciences') ||
-        message.includes('social sciences') ||
-        message.includes('Geography') ||
-        message.includes('geography') ||
-        message.includes('Geo') ||
-        message.includes('geo') ||
-        message.includes('Classical Studies') ||
-        message.includes('Classical studies') ||
-        message.includes('classical studies') ||
-        message.includes('Clasics') ||
-        message.includes('clasics') ||
-        message.includes('History') ||
-        message.includes('history') ||
-        message.includes('Tourism') ||
-        message.includes('tourism')) {
-          actions.handleSocialStudies();
-      }
-      else if (
-        message.includes('Technology') ||
-        message.includes('technology') ||
-        message.includes('Tech') ||
-        message.includes('tech') ||
-        message.includes('Food') ||
-        message.includes('food') ||
-        message.includes('Home Economics') ||
-        message.includes('Home Eco') ||
-        message.includes('Home economics') ||
-        message.includes('Home eco') ||
-        message.includes('home economics') ||
-        message.includes('home eco') ||
-        message.includes('Fabric') ||
-        message.includes('fabric')) {
-          actions.handleTechnology();
-      }
-      else if (
-        message.includes('Visual Arts') ||
-        message.includes('Visual arts') ||
-        message.includes('visual arts') ||
-        message.includes('Photography') ||
-        message.includes('photography') ||
-        message.includes('Art History') ||
-        message.includes('Art history') ||
-        message.includes('art history') ||
-        message.includes('Design') ||
-        message.includes('design') ||
-        message.includes('Painting') ||
-        message.includes('painting')) {
-          actions.handleVisualArts();
-      }
-      else if (
-        message.includes('Art') ||
-        message.includes('art') ||
-        message.includes('Arts') ||
-        message.includes('arts')) {
-          actions.handleArts();
-      }
-      else if (
-        message.includes('Department') ||
-        message.includes('department')) {
-          actions.handleDepartment();
-      }
-      else if (
-        message.includes('Exam timetable') ||
-        message.includes('exam timetable') ||
-        message.includes('when are exams') ||
-        message.includes('When are exams') ||
-        message.includes('time table') ||
-        message.includes('Time Table') ||
-        message.includes('Time table') ||
-        message.includes('Timetable') ||
-        message.includes('timetable')) {
-          actions.handleExamTimetable();
-      }
-      else if (
-        message.includes('results released') ||
-        message.includes('results') ||
-        message.includes('released') ||
-        message.includes('Results released')) {
-          actions.handleExamResultsRelease();
-      }
-      else if (
-        message.includes('Rank Score') ||
-        message.includes('Rank score') ||
-        message.includes('rank score')) {
-          actions.handleRankScore();
-      }
-      else if (
-        message.includes('Literacy') ||
-        message.includes('literacy') ||
-        message.includes('Numeracy') ||
-        message.includes('numeracy')) {
-          actions.handleLiteracyNumeracy();
-      }
-      else if (
-        message.includes('Credits') ||
-        message.includes('credits') ||
-        message.includes('Credit') ||
-        message.includes('credit')) {
-          actions.handleCredits();
-      }
-      else if (
-        message.includes('Y11 Dean') ||
-        message.includes('Y11 dean') ||
-        message.includes('Y11 Dean') ||
-        message.includes('y11 dean') ||
-        message.includes('Year 11 Dean') ||
-        message.includes('Year 11 dean') ||
-        message.includes('year 11 dean') ||
-        message.includes('Head of Year 11') ||
-        message.includes('Head of year 11') ||
-        message.includes('head of Year 11') ||
-        message.includes('head of year 11')) {
-          actions.handleYear11Dean();
-      }
-      else if (
-        message.includes('Y12 Dean') ||
-        message.includes('Y12 dean') ||
-        message.includes('Y12 Dean') ||
-        message.includes('y12 dean') ||
-        message.includes('Year 12 Dean') ||
-        message.includes('Year 12 dean') ||
-        message.includes('year 12 dean') ||
-        message.includes('Head of year 12') ||
-        message.includes('Head of Year 12') ||
-        message.includes('head of year 12') ||
-        message.includes('head of Year 12')) {
-          actions.handleYear12Dean();
-      }
-      else if (
-        message.includes('Y13 Dean') ||
-        message.includes('Y13 dean') ||
-        message.includes('Y13 Dean') ||
-        message.includes('y13 dean') ||
-        message.includes('Year 13 Dean') ||
-        message.includes('Year 13 dean') ||
-        message.includes('year 13 dean') ||
-        message.includes('Head of year 13') ||
-        message.includes('head of year 13') ||
-        message.includes('Head of Year 13') ||
-        message.includes('head of Year 13')) {
-          actions.handleYear13Dean();
-      }
-      else if (
-        message.includes('Dean') ||
-        message.includes('dean') ||
-        message.includes('Deans') ||
-        message.includes('deans') ||
-        message.includes('Head of year') ||
-        message.includes('head of year') ||
-        message.includes('head of Year') ||
-        message.includes('Head of Year')) {
-          actions.handleDeans();
-      }
-      else if (
-        message.includes('Help') ||
-        message.includes('help') ||
-        message.includes('More info') ||
-        message.includes('more info') ||
-        message.includes('Further info') ||
-        message.includes('further info')) {
-          actions.handleMoreInfo();
-        }
 
+    for(var i = 0, size = universityEntrance.length; i < size ; i++){
+      var item = universityEntrance[i];
+      if (message.includes(item)){
+        actions.handleUE(item);
+      }
+    }
+
+    for(var i = 0, size = approvedSubjects.length; i < size ; i++){
+      var item = approvedSubjects[i];
+      if (message.includes(item)){
+        actions.handleUEApproved(item);
+      }
+    }
+
+    for(var i = 0, size = compulsorySubjects.length; i < size ; i++){
+      var item = compulsorySubjects[i];
+      if (message.includes(item)){
+        actions.handleCompulsorySubjects(item);
+      }
+    }
+
+    for(var i = 0, size = subject.length; i < size ; i++){
+      var item = subject[i];
+      if (message.includes(item)){
+        actions.handleCompulsorySubjects(item);
+      }
+    }
+
+    for(var i = 0, size = pass.length; i < size ; i++){
+      var item = pass[i];
+      if (message.includes(item)){
+        actions.handlePass(item);
+      }
+    }
+
+    for(var i = 0, size = careerAdvisor.length; i < size ; i++){
+      var item = careerAdvisor[i];
+      if (message.includes(item)){
+        actions.handleCareerAdvisor(item);
+      }
+    }
+
+    for(var i = 0, size = gateway.length; i < size ; i++){
+      var item = gateway[i];
+      if (message.includes(item)){
+        actions.handleGateway(item);
+      }
+    }
+
+    for(var i = 0, size = business.length; i < size ; i++){
+      var item = business[i];
+      if (message.includes(item)){
+        actions.handleBusiness(item);
+      }
+    }
+
+    for(var i = 0, size = english.length; i < size ; i++){
+      var item = english[i];
+      if (message.includes(item)){
+        actions.handleEnglishMedia(item);
+      }
+    }
+
+    for(var i = 0, size = enhance.length; i < size ; i++){
+      var item = enhance[i];
+      if (message.includes(item)){
+        actions.handleEnhance(item);
+      }
+    }
+
+    for(var i = 0, size = languages.length; i < size ; i++){
+      var item = languages[i];
+      if (message.includes(item)){
+        actions.handleLanguages(item);
+      }
+    }
+
+    for(var i = 0, size = math.length; i < size ; i++){
+      var item = math[i];
+      if (message.includes(item)){
+        actions.handleMath(item);
+      }
+    }
+
+    for(var i = 0, size = peHealth.length; i < size ; i++){
+      var item = peHealth[i];
+      if (message.includes(item)){
+        actions.handlePEHealth(item);
+      }
+    }
+
+    for(var i = 0, size = performingArts.length; i < size ; i++){
+      var item = performingArts[i];
+      if (message.includes(item)){
+        actions.handlePerformingArts(item);
+      }
+    }
+
+    for(var i = 0, size = religiousEducation.length; i < size ; i++){
+      var item = religiousEducation[i];
+      if (message.includes(item)){
+        actions.handleRE(item);
+      }
+    }
+
+    for(var i = 0, size = science.length; i < size ; i++){
+      var item = science[i];
+      if (message.includes(item)){
+        actions.handleScience(item);
+      }
+    }
+
+    for(var i = 0, size = socialStudies.length; i < size ; i++){
+      var item = socialStudies[i];
+      if (message.includes(item)){
+        actions.handleSocialStudies(item);
+      }
+    }
+
+    for(var i = 0, size = technology.length; i < size ; i++){
+      var item = technology[i];
+      if (message.includes(item)){
+        actions.handleTechnology(item);
+      }
+    }
+
+    for(var i = 0, size = visualArts.length; i < size ; i++){
+      var item = visualArts[i];
+      if (message.includes(item)){
+        actions.handleVisualArts(item);
+      }
+    }
+
+    for(var i = 0, size = department.length; i < size ; i++){
+      var item = department[i];
+      if (message.includes(item)){
+        actions.handleDepartment(item);
+      }
+    }
+
+    for(var i = 0, size = examTimetable.length; i < size ; i++){
+      var item = examTimetable[i];
+      if (message.includes(item)){
+        actions.handleExamTimetable(item);
+      }
+    }
+
+    for(var i = 0, size = examResultsReleased.length; i < size ; i++){
+      var item = examResultsReleased[i];
+      if (message.includes(item)){
+        actions.handleExamResultsRelease(item);
+      }
+    }
+
+    for(var i = 0, size = rankScore.length; i < size ; i++){
+      var item = rankScore[i];
+      if (message.includes(item)){
+        actions.handleRankScore(item);
+      }
+    }
+
+    for(var i = 0, size = literacyNumeracy.length; i < size ; i++){
+      var item = literacyNumeracy[i];
+      if (message.includes(item)){
+        actions.handleLiteracyNumeracy(item);
+      }
+    }
+
+    for(var i = 0, size = credits.length; i < size ; i++){
+      var item = credits[i];
+      if (message.includes(item)){
+        actions.handleCredits(item);
+      }
+    }
+
+    for(var i = 0, size = year11Dean.length; i < size ; i++){
+      var item = year11Dean[i];
+      if (message.includes(item)){
+        actions.handleYear11Dean(item);
+      }
+    }
+
+    for(var i = 0, size = year12Dean.length; i < size ; i++){
+      var item = year12Dean[i];
+      if (message.includes(item)){
+        actions.handleYear12Dean(item);
+      }
+    }
+
+    for(var i = 0, size = year13Dean.length; i < size ; i++){
+      var item = year13Dean[i];
+      if (message.includes(item)){
+        actions.handleYear13Dean(item);
+      }
+    }
+
+    for(var i = 0, size = help.length; i < size ; i++){
+      var item = help[i];
+      if (message.includes(item)){
+        actions.handleMoreInfo(item);
+      }
+    }
   }
       
   return (

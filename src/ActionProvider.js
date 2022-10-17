@@ -209,14 +209,6 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
     }));
   };
 
-  const handleArts = () => {
-    const botMessage = createChatBotMessage("Type 'Visual Arts' or 'Performing Arts'.");
-    setState( (prev) => ({
-      ...prev,
-      messages: [...prev.messages, botMessage],
-    }));
-  };
-
   const handleDepartment = () => {
     const botMessage = createChatBotMessage("Type 'subject department' (e.g. English department) to find the contact details for each HOD.");
     setState( (prev) => ({
@@ -355,7 +347,6 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
             handleSocialStudies,
             handleTechnology,
             handleVisualArts,
-            handleArts,
             handleDepartment,
             handleScience,
             handleExamTimetable,

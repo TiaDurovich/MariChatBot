@@ -10,11 +10,12 @@ window.onload = function onload() {
   alert("Welcome to the Marist College NCEA Chatbot. Please note that the chatbot is spelling sensitive.") 
 }
 
+/*
 var timeout;
 document.onmousemove = function(){
   clearTimeout(timeout);
   timeout = setTimeout(function(){alert("move your mouse");}, 45000);
-};
+}; */
 
 const config = {
   botName: botName,
