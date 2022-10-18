@@ -11,14 +11,14 @@ const approvedSubjects = ["Approved Subject", "Approved subject", "approved subj
 const compulsorySubjects = ["Compulsory Subject", "Compulsory subject", "compulsory subject", "Compulsory", "compulsory"];
 const subject = ["Subject", "subject"];
 const pass = ["Pass", "pass", "Achieve", "achieve"];
-const careerAdvisor = ["Career", "career", "Advisor", "advisor"];
+const careerAdvisor = ["Career Advisor", "Career advisor", "career advisor"];
 const gateway = ["Gate", "gate"];
 const business = ["Business", "business"];
 const english = ["English", "english", "Media", "media"];
 const enhance = ["Enhance", "enhance"];
 const languages = ["Language", "language", "Māori", "māori", "Maori", "maori", "French", "french", "Chinese", "chinese"];
 const math = ["Math", "math"];
-const peHealth = ["PE", "pe", "Health", "health"];
+const peHealth = ["Physical Education", "Physical education", "physical education", "PE", "Health", "health"];
 const performingArts = ["Perform", "perform", "Music", "music", "Drama", "drama", "Dance", "dance"];
 const religiousEducation = ["Religious", "religious", "RE"];
 const science = ["Science", "science", "Chem", "chem", "Bio", "bio", "Physics", "physics"];
@@ -44,9 +44,13 @@ const MessageParser = ({ children, actions }) => {
     
 
     for(var i = 0, size = generalEndorsement.length; i < size ; i++){
-      var item = generalEndorsement[i];
+      var item = certificateEndorsement[i];
+      var item2 = generalEndorsement[i];
       if (message.includes(item)){
-        actions.handleEndorsement(item);
+        actions.handleCertificateEndorsement(item);
+      }
+      else if (message.includes(item2)){
+        actions.handleEndorsement(item2); 
     }
   } 
 
