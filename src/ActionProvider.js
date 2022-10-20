@@ -1,15 +1,18 @@
-// ActionProvider handles instructions set by MessageParser
+
 import React from 'react';
 import "./Options.css";
 
+// ActionProvider handles instructions set by MessageParser
 const ActionProvider = ({ createChatBotMessage, setState, children }) => {
-  //Handling the initial user outcome
 
+  //Each 'handle' variable will return a chatbot message/s that correspond to words detected in the user input
+  //For example, the 'handleHelp' variable will return three bot messages if the user inputs "Help" and/or "help"
   const handleHelp = () => {
-    const botMessage = createChatBotMessage(<div><a onClick={handleCertificateEndorsement} id="button">Certificate Endorsements</a></div>);
-    const botMessage2 = createChatBotMessage(<div><a onClick={handleUE} id="button">University Entrance</a></div>);
-    const botMessage3 = createChatBotMessage(<div><a onClick={handleExamTimetable} id="button">Exam Timetable</a></div>);
+    const botMessage = createChatBotMessage(<div><a onClick={handleCertificateEndorsement}>Certificate Endorsements</a></div>);
+    const botMessage2 = createChatBotMessage(<div><a onClick={handleUE}>University Entrance</a></div>);
+    const botMessage3 = createChatBotMessage(<div><a onClick={handleExamTimetable}>Exam Timetable</a></div>);
 
+    
     setState( (prev) => ({
       ...prev,
       messages: [...prev.messages, botMessage, botMessage2, botMessage3],

@@ -17,3 +17,11 @@
   font-size: calc(10px + 2vmin);
   color: #FFFFFF;
 }
+
+.react-chatbot-kit-chat-container {
+  width: 23vw;
+}
+
+.react-chatbot-kit-chat-bot-message {
+  width: 16vw;
+}

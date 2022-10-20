@@ -1,6 +1,5 @@
 /*Option button styling (not implemented in final code)*/
 
-button {
-  color: aqua;
+.handleHelp a :hover {
+  color: green;
 }
-
