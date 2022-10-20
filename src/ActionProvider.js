@@ -63,6 +63,15 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
     }));
   };
 
+  const handleGeneralSubjects = () => {
+    const botMessage = createChatBotMessage("To find subject option info... to find compulsory subjects... to find department info...");
+
+    setState( (prev) => ({
+      ...prev,
+      messages: [...prev.messages, botMessage],
+    }));
+  };
+
   const handleSubjectOptions = () => {
     const botMessage = createChatBotMessage("Subject option info...");
 
@@ -330,6 +339,7 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
             handleSubjectEndorsement,
             handleUE,
             handleUEApproved,
+            handleGeneralSubjects,
             handleSubjectOptions,
             handleCompulsorySubjects,
             handlePass,

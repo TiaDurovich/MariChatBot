@@ -8,7 +8,7 @@ const subjectEndorsement = ["Subject Endorsement", "Subject endorsement", "subje
 const generalEndorsement = ["Endorse", "endorse"];
 const universityEntrance = ["UE", "ue", "University Entrance", "University entrance", "university entrance", "Uni Entrance", "Uni entrance", "uni entrance"];
 const approvedSubjects = ["Approved Subject", "Approved subject", "approved subject"];
-const compulsorySubjects = ["Compulsory Subject", "Compulsory subject", "compulsory subject", "Compulsory", "compulsory"];
+const compulsorySubjects = ["Compulsory", "compulsory"];
 const subject = ["Subject", "subject"];
 const pass = ["Pass", "pass", "Achieve", "achieve"];
 const careerAdvisor = ["Career Advisor", "Career advisor", "career advisor"];
@@ -39,33 +39,47 @@ const help = ["Help", "help", "Moro Info", "More info", "more info", "Further In
 
 const MessageParser = ({ children, actions }) => {
   const parse = (message) => {
-    //Variables containing object data
 
-    
-
-    for(var i = 0, size = generalEndorsement.length; i < size ; i++){
-      var item = certificateEndorsement[i];
-      var item2 = generalEndorsement[i];
-      if (message.includes(item)){
-        actions.handleCertificateEndorsement(item);
-      }
-      else if (message.includes(item2)){
-        actions.handleEndorsement(item2); 
+    if (
+      message.includes('Certificate Endorse') ||
+      message.includes('Certificate endorse') ||
+      message.includes('certificate endorse')) {
+        actions.handleCertificateEndorsement();
+    } else if (
+      message.includes('Subject Endorse') ||
+      message.includes('Subject endorse') ||
+      message.includes('subject endorse')) {
+        actions.handleSubjectEndorsement();
+    } else if (
+      message.includes('Endorse') ||
+      message.includes('endorse')) {
+        actions.handleEndorsement();
+    } else if (
+      message.includes('Approved subject') ||
+      message.includes('Approved Subject') ||
+      message.includes('approved subject') ||
+      message.includes('Entrance approved') ||
+      message.includes('entrance approved')) {
+        actions.handleUEApproved();
+    } else if (
+      message.includes('Subject') ||
+      message.includes('subject') ||
+      message.includes('Subjects') ||
+      message.includes('subject')) {
+        actions.handleSubjectOptions();
     }
-  } 
-
+      
+    for(var i = 0, size = compulsorySubjects.length; i < size ; i++){
+      var item = compulsorySubjects[i];
+      if (message.includes(item)){
+        actions.handleCompulsorySubjects(item);
+      }
+    }
 
     for(var i = 0, size = universityEntrance.length; i < size ; i++){
       var item = universityEntrance[i];
       if (message.includes(item)){
         actions.handleUE(item);
-      }
-    }
-
-    for(var i = 0, size = subject.length; i < size ; i++){
-      var item = subject[i];
-      if (message.includes(item)){
-        actions.handleCompulsorySubjects(item);
       }
     }
 

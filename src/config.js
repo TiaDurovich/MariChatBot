@@ -7,7 +7,7 @@ import Options from "../src/Options.js";
 const botName = 'the Marist College NCEA Chatbot'
 
 window.onload = function onload() {
-  alert("Welcome to the Marist College NCEA Chatbot. Please note that the chatbot is spelling sensitive.") 
+  alert("Welcome to the Marist College NCEA Chatbot. Please write all questions in lower case.") 
 }
 
 /*
