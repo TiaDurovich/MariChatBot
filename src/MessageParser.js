@@ -1,16 +1,8 @@
 // MessageParser takes a mesage and determins a logical response
 import React from 'react';
-import Chatbot, { createChatBotMessage } from 'react-chatbot-kit';
 
-
-const certificateEndorsement = ["Certificate Endorsement", "Certificate endorsement", "certificate endorsement"];
-const subjectEndorsement = ["Subject Endorsement", "Subject endorsement", "subject endorsement"];
-const generalEndorsement = ["Endorse", "endorse"];
-const universityEntrance = ["UE", "ue", "University Entrance", "University entrance", "university entrance", "Uni Entrance", "Uni entrance", "uni entrance"];
-const approvedSubjects = ["Approved Subject", "Approved subject", "approved subject"];
 const compulsorySubjects = ["Compulsory", "compulsory"];
-const subject = ["Subject", "subject"];
-const pass = ["Pass", "pass", "Achieve", "achieve"];
+const universityEntrance = ["UE", "ue", "University Entrance", "University entrance", "university entrance", "Uni Entrance", "Uni entrance", "uni entrance"];
 const careerAdvisor = ["Career Advisor", "Career advisor", "career advisor"];
 const gateway = ["Gate", "gate"];
 const business = ["Business", "business"];
@@ -23,9 +15,8 @@ const performingArts = ["Perform", "perform", "Music", "music", "Drama", "drama"
 const religiousEducation = ["Religious", "religious", "RE"];
 const science = ["Science", "science", "Chem", "chem", "Bio", "bio", "Physics", "physics"];
 const socialStudies = ["Social Studies", "Social studies", "social studies", "Geo", "geo", "Classic", "classic", "History", "history", "Tourism", "tourism"];
-const technology = ["Digi", "digi", "Food", "food", "Home Eco", "Home eco", "home eco", "Fabric", "fabric"];
+const technology = ["Tech", "tech", "Digi", "digi", "Food", "food", "Home Eco", "Home eco", "home eco", "Fabric", "fabric"];
 const visualArts = ["Art", "art", "Photography", "photography", "Design", "design", "Painting", "painting"];
-const department = ["Department", "department"];
 const examTimetable = ["Timetable", "timetable", "When are exams", "when are exams"];
 const examResultsReleased = ["Released", "released"];
 const rankScore = ["Rank Score", "Rank score", "rank score"];
@@ -46,10 +37,13 @@ const MessageParser = ({ children, actions }) => {
       message.includes('certificate endorse')) {
         actions.handleCertificateEndorsement();
     } else if (
+      message.includes('Course Endorse') ||
+      message.includes('Course endorse') ||
+      message.includes('course endorse')  ||
       message.includes('Subject Endorse') ||
       message.includes('Subject endorse') ||
       message.includes('subject endorse')) {
-        actions.handleSubjectEndorsement();
+        actions.handleCourseEndorsement();
     } else if (
       message.includes('Endorse') ||
       message.includes('endorse')) {
@@ -62,31 +56,24 @@ const MessageParser = ({ children, actions }) => {
       message.includes('entrance approved')) {
         actions.handleUEApproved();
     } else if (
+      message.includes('Compulsory') ||
+      message.includes('compulsory')) {
+        actions.handleCompulsorySubjects();
+    }else if (
       message.includes('Subject') ||
       message.includes('subject') ||
       message.includes('Subjects') ||
       message.includes('subject')) {
         actions.handleSubjectOptions();
-    }
-      
-    for(var i = 0, size = compulsorySubjects.length; i < size ; i++){
-      var item = compulsorySubjects[i];
-      if (message.includes(item)){
-        actions.handleCompulsorySubjects(item);
+    } else if (
+      message == ("")) {
+        actions.handleEmptyResponse();
       }
-    }
 
     for(var i = 0, size = universityEntrance.length; i < size ; i++){
       var item = universityEntrance[i];
       if (message.includes(item)){
         actions.handleUE(item);
-      }
-    }
-
-    for(var i = 0, size = pass.length; i < size ; i++){
-      var item = pass[i];
-      if (message.includes(item)){
-        actions.handlePass(item);
       }
     }
 

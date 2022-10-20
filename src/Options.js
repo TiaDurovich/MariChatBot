@@ -1,3 +1,5 @@
+//This code was tested for button implementation.
+//Ideally, the Mari will provide the user with buttons to click for automated questions
 import React from "react";
 
 import "./Options.css";

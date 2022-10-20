@@ -1,27 +1,19 @@
-import React from "react";
 import { createChatBotMessage } from "react-chatbot-kit";
 
-import Options from "../src/Options.js";
-
 //Variable storing text data
-const botName = 'the Marist College NCEA Chatbot'
+const botName = 'Mari'
 
 window.onload = function onload() {
-  alert("Welcome to the Marist College NCEA Chatbot. Please write all questions in lower case.") 
+  alert("Welcome to Marist College's virtual NCEA assistant. Please make sure your spelling is correct, otherwise, Mari may not understand what you are asking. Also note that the information provided is applicable to NCEA in 2022.") 
 }
 
-/*
-var timeout;
-document.onmousemove = function(){
-  clearTimeout(timeout);
-  timeout = setTimeout(function(){alert("move your mouse");}, 45000);
-}; */
-
+//Below are examples of object variables
 const config = {
   botName: botName,
   
   initialMessages: [
-    createChatBotMessage(`Hello, I am here to help with your NCEA. You can ask me about...`) 
+    createChatBotMessage(`Hey, my name's Mari - Marist College's virtual NCEA assistant!`),
+    createChatBotMessage(`I can provide info about endorsements, university entrance, subjects, departments, and more. Ask away!`) 
   ],
 
   customStyles: {
