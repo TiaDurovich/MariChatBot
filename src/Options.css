@@ -1,14 +1,6 @@
 /*Option button styling (not implemented in final code)*/
-.options-container {
-  display: flex;
-  flex-wrap: wrap;
+
+button {
+  color: aqua;
 }
 
-.option-button {
-  margin: 5px;
-  border-radius: 25px;
-  padding: 8px;
-  border-color: blue;
-  background: transparent;
-  text-align: center;
-}

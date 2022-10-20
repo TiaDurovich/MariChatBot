@@ -1,7 +1,7 @@
 // MessageParser takes a mesage and determins a logical response
 import React from 'react';
 
-const compulsorySubjects = ["Compulsory", "compulsory"];
+const help = ["Help", "help"];
 const universityEntrance = ["UE", "ue", "University Entrance", "University entrance", "university entrance", "Uni Entrance", "Uni entrance", "uni entrance"];
 const careerAdvisor = ["Career Advisor", "Career advisor", "career advisor"];
 const gateway = ["Gate", "gate"];
@@ -25,7 +25,7 @@ const credits = ["Credit", "credit"];
 const year11Dean = ["Y11 Dean", "Y11 dean", "y11 Dean", "y11 dean", "Year 11 Dean", "Year 11 dean", "year 11 Dean", "year 11 dean", "Dean of Year 11", "dean of Year 11", "dean of Year 11", "dean of year 11"];
 const year12Dean = ["Y12 Dean", "Y12 dean", "y12 Dean", "y12 dean", "Year 12 Dean", "Year 12 dean", "year 12 Dean", "year 12 dean", "Dean of Year 12", "dean of Year 12", "dean of Year 12", "dean of year 12"];
 const year13Dean = ["Y13 Dean", "Y13 dean", "y13 Dean", "y13 dean", "Year 13 Dean", "Year 13 dean", "year 13 Dean", "year 13 dean", "Dean of Year 13", "dean of Year 13", "dean of Year 13", "dean of year 13"];
-const help = ["Help", "help", "Moro Info", "More info", "more info", "Further Info", "Further info", "further info"];
+const moreInfo = ["Moro Info", "More info", "more info", "Further Info", "Further info", "further info"];
 
 
 const MessageParser = ({ children, actions }) => {
@@ -69,6 +69,13 @@ const MessageParser = ({ children, actions }) => {
       message == ("")) {
         actions.handleEmptyResponse();
       }
+
+    for(var i = 0, size = help.length; i < size ; i++){
+      var item = help[i];
+      if (message.includes(item)){
+        actions.handleHelp(item);
+      }
+    }
 
     for(var i = 0, size = universityEntrance.length; i < size ; i++){
       var item = universityEntrance[i];
@@ -231,8 +238,8 @@ const MessageParser = ({ children, actions }) => {
       }
     }
 
-    for(var i = 0, size = help.length; i < size ; i++){
-      var item = help[i];
+    for(var i = 0, size = moreInfo.length; i < size ; i++){
+      var item = moreInfo[i];
       if (message.includes(item)){
         actions.handleMoreInfo(item);
       }

@@ -13,7 +13,8 @@ const config = {
   
   initialMessages: [
     createChatBotMessage(`Hey, my name's Mari - Marist College's virtual NCEA assistant!`),
-    createChatBotMessage(`I can provide info about endorsements, university entrance, subjects, departments, and more. Ask away!`) 
+    createChatBotMessage(`Type 'help' for topics we can talk about, or ask away!`), 
+
   ],
 
   customStyles: {
