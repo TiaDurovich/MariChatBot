@@ -2,7 +2,7 @@
 import React from 'react';
 import "./Options.css";
 
-// ActionProvider handles instructions set by MessageParser, it's job is to update the state of the chatbot
+// ActionProvider handles instructions set by MessageParser, its job is to update the state of the chatbot
 const ActionProvider = ({ createChatBotMessage, setState, children }) => {
 
   //Each 'handle' variable will return a chatbot message/s that correspond to words detected in the user input
