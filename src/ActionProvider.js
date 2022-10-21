@@ -13,18 +13,20 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
     const botMessage = createChatBotMessage(<div><a onClick={handleCertificateEndorsement}>Certificate Endorsements</a></div>);
     const botMessage2 = createChatBotMessage(<div><a onClick={handleUE}>University Entrance</a></div>);
     const botMessage3 = createChatBotMessage(<div><a onClick={handleExamTimetable}>Exam Timetable</a></div>);
+    const botMessage4 = createChatBotMessage(<div><a onClick={handleCareerAdvisor}>Career Advisor</a></div>);
+
 
     //seState is a function from the react-chatbot-kit third-party library
     // It is responsible for injecting functions into the internal chatbot state, therefore producing a chatbot output
     setState( (prev) => ({
       ...prev,
-      messages: [...prev.messages, botMessage, botMessage2, botMessage3],
+      messages: [...prev.messages, botMessage, botMessage2, botMessage3, botMessage4],
     }));
   };
 
   const handlePass = () => {
     const botMessage = createChatBotMessage("For info on how NCEA works, visit the Marist College website. Here, you can find the NZQA Handbook and scholarship info:");
-    const button = createChatBotMessage (<div><a href='http://www.maristcollege.school.nz/WebSpace/1291/' target={'_blank'}>NCEA Exam Timetable</a></div>);
+    const button = createChatBotMessage (<div><a href='http://www.maristcollege.school.nz/WebSpace/1291/' target={'_blank'}>MC Website</a></div>);
 
     setState( (prev) => ({
       ...prev,
@@ -103,142 +105,141 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
 
   const handleCareerAdvisor = () => {
     const botMessage = createChatBotMessage("The Marist College Careers Advisor is Ms Catley. You can find her in room 311, or email her:");
-    const botMessage2 = createChatBotMessage("gateway@maristcollege.school.nz");
+    const button = createChatBotMessage (<div><a href='mailto: gateway@maristcollege.school.nz' target={'_blank'}>gateway@maristcollege.school.nz</a></div>);
 
     setState( (prev) => ({
       ...prev,
-      messages: [...prev.messages, botMessage, botMessage2],
+      messages: [...prev.messages, botMessage, button],
     }));
   };
 
   const handleGateway = () => {
     const botMessage = createChatBotMessage("To find out about the Gateway program at Marist College, email the Careers Advisor (Ms Catley):");
-    const botMessage2 = createChatBotMessage("gateway@maristcollege.school.nz");
+    const button = createChatBotMessage (<div><a href='mailto: gateway@maristcollege.school.nz' target={'_blank'}>gateway@maristcollege.school.nz</a></div>);
 
     setState( (prev) => ({
       ...prev,
-      messages: [...prev.messages, botMessage, botMessage2],
+      messages: [...prev.messages, botMessage, button],
     }));
   };
 
   const handleBusiness = () => {
     const botMessage = createChatBotMessage("The Curriculum Leader of Business Studies is Mrs Judy Leman:");
-    const botMessage2 = createChatBotMessage("j.leman@maristcollege.school.nz");
+    const button = createChatBotMessage (<div><a href='mailto: j.leman@maristcollege.school.nz' target={'_blank'}>j.leman@maristcollege.school.nz</a></div>);
 
     setState( (prev) => ({
       ...prev,
-      messages: [...prev.messages, botMessage, botMessage2],
+      messages: [...prev.messages, botMessage, button],
     }));
   };
 
   const handleEnglishMedia = () => {
     const botMessage = createChatBotMessage("The Curriculum Leader of English is Ms Shelly Masters:");
-    const botMessage2 = createChatBotMessage("s.masters@maristcollege.school.nz");
+    const button = createChatBotMessage (<div><a href='mailto: s.masters@maristcollege.school.nz' target={'_blank'}>s.masters@maristcollege.school.nz</a></div>);
 
     setState( (prev) => ({
       ...prev,
-      messages: [...prev.messages, botMessage, botMessage2],
+      messages: [...prev.messages, botMessage, button],
     }));
   };
 
   const handleEnhance = () => {
     const botMessage = createChatBotMessage("The Head of Enhance Learning is Ms Gabrielle Smith:");
-    const botMessage2 = createChatBotMessage("g.smith@maristcollege.school.nz");
+    const button = createChatBotMessage (<div><a href='mailto: s.smith@maristcollege.school.nz' target={'_blank'}>s.smith@maristcollege.school.nz</a></div>);
 
     setState( (prev) => ({
       ...prev,
-      messages: [...prev.messages, botMessage, botMessage2],
+      messages: [...prev.messages, botMessage, button],
     }));
   };
 
   const handleLanguages = () => {
     const botMessage = createChatBotMessage("The Curriculum Leader of Languages is Ms Viktoria Jonas:");
-    const botMessage2 = createChatBotMessage("v.jonas@maristcollege.school.nz");
+    const button = createChatBotMessage (<div><a href='mailto: v.jonas@maristcollege.school.nz' target={'_blank'}>v.jonas@maristcollege.school.nz</a></div>);
 
     setState( (prev) => ({
       ...prev,
-      messages: [...prev.messages, botMessage, botMessage2],
+      messages: [...prev.messages, botMessage, button],
     }));
   };
 
   const handleMath = () => {
     const botMessage = createChatBotMessage("The Curriculum Leader of Mathematics is Mrs Wid Al-Rahim:");
-    const botMessage2 = createChatBotMessage("w.al-rahim@maristcollege.school.nz");
+    const button = createChatBotMessage (<div><a href='mailto: w.al-rahim@maristcollege.school.nz' target={'_blank'}>w.al-rahim@maristcollege.school.nz</a></div>);
 
     setState( (prev) => ({
       ...prev,
-      messages: [...prev.messages, botMessage, botMessage2],
+      messages: [...prev.messages, botMessage, button],
     }));
   };
 
   const handlePEHealth = () => {
     const botMessage = createChatBotMessage("The Curriculum Leader of PE and Health is Ms Tess Murphy:");
-    const botMessage2 = createChatBotMessage("t.murphy@maristcollege.school.nz");
+    const button = createChatBotMessage (<div><a href='mailto: t.murphy@maristcollege.school.nz' target={'_blank'}>t.murphy@maristcollege.school.nz</a></div>);
     
     setState( (prev) => ({
       ...prev,
-      messages: [...prev.messages, botMessage, botMessage2],
+      messages: [...prev.messages, botMessage, button],
     }));
   };
 
   const handlePerformingArts = () => {
     const botMessage = createChatBotMessage("The Curriculum Leader of Performing Arts is Ms Charlotte Nicklin:");
-    const botMessage2 = createChatBotMessage("c.nicklin@maristcollege.school.nz");
+    const button = createChatBotMessage (<div><a href='mailto: c.nicklin@maristcollege.school.nz' target={'_blank'}>c.nicklin@maristcollege.school.nz</a></div>);
     
     setState( (prev) => ({
       ...prev,
-      messages: [...prev.messages, botMessage, botMessage2],
+      messages: [...prev.messages, botMessage, button],
     }));
   };
 
   const handleRE = () => {
     const botMessage = createChatBotMessage("The Curriculum Leader of RE and the Assistant Principle Catholic Character is Mrs Katherine McGillivray:");
-    const botMessage2 = createChatBotMessage("k.mcgillivray@maristcollege.school.nz");
+    const button = createChatBotMessage (<div><a href='mailto: k.mcgillivray@maristcollege.school.nz' target={'_blank'}>k.mcgillivray@maristcollege.school.nz</a></div>);
 
     setState( (prev) => ({
       ...prev,
-      messages: [...prev.messages, botMessage, botMessage2],
+      messages: [...prev.messages, botMessage, button],
     }));
   };
 
   const handleScience = () => {
     const botMessage = createChatBotMessage("The Curriculum Leader of Science is Mr Nigel Horne:");
-    const botMessage2 = createChatBotMessage("h.nigel@maristcollege.school.nz");
+    const button = createChatBotMessage (<div><a href='mailto: h.nigel@maristcollege.school.nz' target={'_blank'}>h.nigel@maristcollege.school.nz</a></div>);
 
     setState( (prev) => ({
       ...prev,
-      messages: [...prev.messages, botMessage, botMessage2],
+      messages: [...prev.messages, botMessage, button],
     }));
   };
 
   const handleSocialStudies = () => {
     const botMessage = createChatBotMessage("The Curriculum Leader of Social Studies is Ms Jane Foster:");
-    const botMessage2 = createChatBotMessage("j.foster@maristcollege.school.nz");
+    const button = createChatBotMessage (<div><a href='mailto: j.foster@maristcollege.school.nz' target={'_blank'}>j.foster@maristcollege.school.nz</a></div>);
     
     setState( (prev) => ({
       ...prev,
-      messages: [...prev.messages, botMessage, botMessage2],
+      messages: [...prev.messages, botMessage, button],
     }));
   };
 
   const handleTechnology = () => {
     const botMessage = createChatBotMessage("The Curriculum Leader of Technology is Ms Hilary Roy:");
-    const botMessage2 = createChatBotMessage("h.roy@maristcollege.school.nz")
-
+    const button = createChatBotMessage (<div><a href='mailto: h.roy@maristcollege.school.nz' target={'_blank'}>h.roy@maristcollege.school.nz</a></div>);
 
     setState( (prev) => ({
       ...prev,
-      messages: [...prev.messages, botMessage, botMessage2],
+      messages: [...prev.messages, botMessage, button],
     }));
   };
 
   const handleVisualArts = () => {
     const botMessage = createChatBotMessage("The Curriculum Leader of Arts is Ms Jessica Jacobsen:");
-    const botMessage2 = createChatBotMessage("j.jacobsen@maristcollege.school.nz");
+    const button = createChatBotMessage (<div><a href='mailto: j.jacobsen@maristcollege.school.nz' target={'_blank'}>j.jacobsen@maristcollege.school.nz</a></div>);
     
     setState( (prev) => ({
       ...prev,
-      messages: [...prev.messages, botMessage, botMessage2],
+      messages: [...prev.messages, botMessage, button],
     }));
   };
   
