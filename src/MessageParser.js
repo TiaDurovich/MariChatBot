@@ -1,6 +1,7 @@
 import React from 'react';
 
 //Arrays used to catergorize potential user input
+const hello = ["Hello", "hello", "Hi", "hi", "Hey", "hey"];
 const help = ["Help", "help"];
 const pass = ["Pass", "pass", "Achieve", "achieve", "Scholarship", "scholarship"];
 const universityEntrance = ["UE", "ue", "University Entrance", "University entrance", "university entrance", "Uni Entrance", "Uni entrance", "uni entrance"];
@@ -77,6 +78,13 @@ const MessageParser = ({ children, actions }) => {
 
     //Each 'for' statement loops through its respective array in search for text that is included within the user input
     //If the user input contains text that matches one of the strings within the array, the relevant function within ActionProvider will be triggered
+    for(var i = 0, size = hello.length; i < size ; i++){
+      var item = hello[i];
+      if (message.includes(item)){
+        actions.handleHello(item);
+      }
+    }
+    
     for(var i = 0, size = help.length; i < size ; i++){
       var item = help[i];
       if (message.includes(item)){

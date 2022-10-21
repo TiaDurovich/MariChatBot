@@ -7,33 +7,6 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
 
   //Each 'handle' variable will return a chatbot message/s that correspond to words detected in the user input
   //For example, the 'handleHelp' variable will return three bot messages if the user inputs "Help" and/or "help"
-  const handleHelp = () => {
-    //createChatBotMessage is a function from the react-chatbot-kit third-party library
-    //It assists in the process of calling other functions (found in MessageParser) in response to user input
-    const botMessage = createChatBotMessage(<div><a onClick={handleCertificateEndorsement}>Certificate Endorsements</a></div>);
-    const botMessage2 = createChatBotMessage(<div><a onClick={handleUE}>University Entrance</a></div>);
-    const botMessage3 = createChatBotMessage(<div><a onClick={handleExamTimetable}>Exam Timetable</a></div>);
-    const botMessage4 = createChatBotMessage(<div><a onClick={handleCareerAdvisor}>Career Advisor</a></div>);
-
-
-    //seState is a function from the react-chatbot-kit third-party library
-    // It is responsible for injecting functions into the internal chatbot state, therefore producing a chatbot output
-    setState( (prev) => ({
-      ...prev,
-      messages: [...prev.messages, botMessage, botMessage2, botMessage3, botMessage4],
-    }));
-  };
-
-  const handlePass = () => {
-    const botMessage = createChatBotMessage("For info on how NCEA works, visit the Marist College website. Here, you can find the NZQA Handbook and scholarship info:");
-    const button = createChatBotMessage (<div><a href='http://www.maristcollege.school.nz/WebSpace/1291/' target={'_blank'}>MC Website</a></div>);
-
-    setState( (prev) => ({
-      ...prev,
-      messages: [...prev.messages, botMessage, button],
-    }));
-  };
-
   const handleCertificateEndorsement = () => {
     const botMessage = createChatBotMessage("For an NCEA certificate to be endorsed with Excellence, a student must gain 46 credits at Excellence at the level of the certificate or above.");
     const botMessage2 = createChatBotMessage("Likewise, if a student gains 46 credits at Merit (or Merit and Excellence) at the level of the certificate or above, the certificate may be endorsed with Merit.");
@@ -80,6 +53,42 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
     setState( (prev) => ({
       ...prev,
       messages: [...prev.messages, botMessage],
+    }));
+  };
+
+  const handleHello = () => {
+    const botMessage = createChatBotMessage("Hello! I am Mari, Marist College's NCEA virtual assistant. Ask me anything about NCEA, or type 'help' for guidance.");
+
+    setState( (prev) => ({
+      ...prev,
+      messages: [...prev.messages, botMessage],
+    }));
+  };
+  
+  const handleHelp = () => {
+    //createChatBotMessage is a function from the react-chatbot-kit third-party library
+    //It assists in the process of calling other functions (found in MessageParser) in response to user input
+    const botMessage = createChatBotMessage(<div><a onClick={handleCertificateEndorsement}>Certificate Endorsements</a></div>);
+    const botMessage2 = createChatBotMessage(<div><a onClick={handleUE}>University Entrance</a></div>);
+    const botMessage3 = createChatBotMessage(<div><a onClick={handleExamTimetable}>Exam Timetable</a></div>);
+    const botMessage4 = createChatBotMessage(<div><a onClick={handleCareerAdvisor}>Career Advisor</a></div>);
+
+
+    //seState is a function from the react-chatbot-kit third-party library
+    // It is responsible for injecting functions into the internal chatbot state, therefore producing a chatbot output
+    setState( (prev) => ({
+      ...prev,
+      messages: [...prev.messages, botMessage, botMessage2, botMessage3, botMessage4],
+    }));
+  };
+
+  const handlePass = () => {
+    const botMessage = createChatBotMessage("For info on how NCEA works, visit the Marist College website. Here, you can find the NZQA Handbook and scholarship info:");
+    const button = createChatBotMessage (<div><a href='http://www.maristcollege.school.nz/WebSpace/1291/' target={'_blank'}>MC Website</a></div>);
+
+    setState( (prev) => ({
+      ...prev,
+      messages: [...prev.messages, botMessage, button],
     }));
   };
 
@@ -325,17 +334,17 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
 
   const handleMoreInfo = () => {
     const botMessage = createChatBotMessage("For further information, please contact the Careers Advisor, Ms Jenny Catley:");
-    const botMessage2 = createChatBotMessage("gateway@maristcollege.school.nz");
+    const button = createChatBotMessage (<div><a href='mailto: gateway@maristcollege.school.nz' target={'_blank'}>gateway@maristcollege.school.nz</a></div>);
 
     setState( (prev) => ({
       ...prev,
-      messages: [...prev.messages, botMessage, botMessage2],
+      messages: [...prev.messages, botMessage, button],
     }));
   };
 
   //Chatbot response to empty user input
   const handleEmptyResponse = () => {
-    const botMessage = createChatBotMessage('Please try typing a question.');
+    const botMessage = createChatBotMessage('Please try typing a question. You may also type "help" or "further info" for assistance.');
 
     setState( (prev) => ({
       ...prev,
@@ -349,6 +358,7 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
       {React.Children.map(children, (child) => {
         return React.cloneElement(child, {
           actions: {
+            handleHello,
             handleHelp,
             handlePass,
             handleEndorsement,
