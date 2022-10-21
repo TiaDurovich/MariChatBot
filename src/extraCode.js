@@ -1,5 +1,5 @@
-//Handling the response for specific year levels...
 
+//Handling the response for specific year levels...
 //MessageParser js
 if (message.includes('Year 11') || 
     message.includes('year 11') || 
@@ -49,6 +49,7 @@ if (message.includes('Year 11') ||
         }));
       };
 
+      ///////////////////////////
 
       //Button CSS
 
@@ -68,9 +69,9 @@ if (message.includes('Year 11') ||
         -moz-osx-font-smoothing: grayscale;
       }
       
-
-const certificateEndorsement = ["Certificate Endorsement", "Certificate endorsement", "certificate endorsement"];
-const subjectEndorsement = ["Subject Endorsement", "Subject endorsement", "subject endorsement"];
-const generalEndorsement = ["Endorse", "endorse"];
-const approvedSubjects = ["Approved Subject", "Approved subject", "approved subject"];
-const subject = ["Subject", "subject"];
+      // Extra arrays
+      const certificateEndorsement = ["Certificate Endorsement", "Certificate endorsement", "certificate endorsement"];
+      const subjectEndorsement = ["Subject Endorsement", "Subject endorsement", "subject endorsement"];
+      const generalEndorsement = ["Endorse", "endorse"];
+      const approvedSubjects = ["Approved Subject", "Approved subject", "approved subject"];
+      const subject = ["Subject", "subject"];

@@ -18,10 +18,12 @@
   color: #FFFFFF;
 }
 
+/*Alters the width of the entire chat box */
 .react-chatbot-kit-chat-container {
   width: 23vw;
 }
 
+/*Alters the width of the individual chat messages */
 .react-chatbot-kit-chat-bot-message {
   width: 16vw;
 }

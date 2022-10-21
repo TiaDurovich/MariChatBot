@@ -2,20 +2,33 @@
 import React from 'react';
 import "./Options.css";
 
-// ActionProvider handles instructions set by MessageParser
+// ActionProvider handles instructions set by MessageParser, it's job is to update the state of the chatbot
 const ActionProvider = ({ createChatBotMessage, setState, children }) => {
 
   //Each 'handle' variable will return a chatbot message/s that correspond to words detected in the user input
   //For example, the 'handleHelp' variable will return three bot messages if the user inputs "Help" and/or "help"
   const handleHelp = () => {
+    //createChatBotMessage is a function from the react-chatbot-kit third-party library
+    //It assists in the process of calling other functions (found in MessageParser) in response to user input
     const botMessage = createChatBotMessage(<div><a onClick={handleCertificateEndorsement}>Certificate Endorsements</a></div>);
     const botMessage2 = createChatBotMessage(<div><a onClick={handleUE}>University Entrance</a></div>);
     const botMessage3 = createChatBotMessage(<div><a onClick={handleExamTimetable}>Exam Timetable</a></div>);
 
-    
+    //seState is a function from the react-chatbot-kit third-party library
+    // It is responsible for injecting functions into the internal chatbot state, therefore producing a chatbot output
     setState( (prev) => ({
       ...prev,
       messages: [...prev.messages, botMessage, botMessage2, botMessage3],
+    }));
+  };
+
+  const handlePass = () => {
+    const botMessage = createChatBotMessage("For info on how NCEA works, visit the Marist College website. Here, you can find the NZQA Handbook and scholarship info:");
+    const button = createChatBotMessage (<div><a href='http://www.maristcollege.school.nz/WebSpace/1291/' target={'_blank'}>NCEA Exam Timetable</a></div>);
+
+    setState( (prev) => ({
+      ...prev,
+      messages: [...prev.messages, botMessage, button],
     }));
   };
 
@@ -319,7 +332,7 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
     }));
   };
 
-  //Response to unexpected user input
+  //Chatbot response to empty user input
   const handleEmptyResponse = () => {
     const botMessage = createChatBotMessage('Please try typing a question.');
 
@@ -329,13 +342,14 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
     }));
   };
 
-  
+  //Places the functions in the 'actions' object to pass to the MessageParser
   return (
     <div>
       {React.Children.map(children, (child) => {
         return React.cloneElement(child, {
           actions: {
             handleHelp,
+            handlePass,
             handleEndorsement,
             handleCourseEndorsement,
             handleCertificateEndorsement,

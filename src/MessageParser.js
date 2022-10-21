@@ -1,7 +1,8 @@
-// MessageParser takes a mesage and determins a logical response
 import React from 'react';
 
+//Arrays used to catergorize potential user input
 const help = ["Help", "help"];
+const pass = ["Pass", "pass", "Achieve", "achieve", "Scholarship", "scholarship"];
 const universityEntrance = ["UE", "ue", "University Entrance", "University entrance", "university entrance", "Uni Entrance", "Uni entrance", "uni entrance"];
 const careerAdvisor = ["Career Advisor", "Career advisor", "career advisor"];
 const gateway = ["Gate", "gate"];
@@ -27,16 +28,21 @@ const year12Dean = ["Y12 Dean", "Y12 dean", "y12 Dean", "y12 dean", "Year 12 Dea
 const year13Dean = ["Y13 Dean", "Y13 dean", "y13 Dean", "y13 dean", "Year 13 Dean", "Year 13 dean", "year 13 Dean", "year 13 dean", "Dean of Year 13", "dean of Year 13", "dean of Year 13", "dean of year 13"];
 const moreInfo = ["Moro Info", "More info", "more info", "Further Info", "Further info", "further info"];
 
-
+// MessageParser takes user input and determins a logical response
+//It recieves the ActionProvider as the first argument, and a reference to the state as the second argument on initialisation
 const MessageParser = ({ children, actions }) => {
   const parse = (message) => {
 
+  //If else statements are used when the same user input may trigger multiple different chatbot responses
+  //This prevents the chatbot from outputting all the responses related to endorsements and/or subjects
     if (
       message.includes('Certificate Endorse') ||
       message.includes('Certificate endorse') ||
       message.includes('certificate endorse')) {
         actions.handleCertificateEndorsement();
-    } else if (
+    } 
+    
+    if (
       message.includes('Course Endorse') ||
       message.includes('Course endorse') ||
       message.includes('course endorse')  ||
@@ -49,9 +55,8 @@ const MessageParser = ({ children, actions }) => {
       message.includes('endorse')) {
         actions.handleEndorsement();
     } else if (
-      message.includes('Approved subject') ||
-      message.includes('Approved Subject') ||
-      message.includes('approved subject') ||
+      message.includes('Approved') ||
+      message.includes('approved') ||
       message.includes('Entrance approved') ||
       message.includes('entrance approved')) {
         actions.handleUEApproved();
@@ -70,10 +75,19 @@ const MessageParser = ({ children, actions }) => {
         actions.handleEmptyResponse();
       }
 
+    //Each 'for' statement loops through its respective array in search for text that is included within the user input
+    //If the user input contains text that matches one of the strings within the array, the relevant function within ActionProvider will be triggered
     for(var i = 0, size = help.length; i < size ; i++){
       var item = help[i];
       if (message.includes(item)){
         actions.handleHelp(item);
+      }
+    }
+
+    for(var i = 0, size = pass.length; i < size ; i++){
+      var item = pass[i];
+      if (message.includes(item)){
+        actions.handlePass(item);
       }
     }
 
